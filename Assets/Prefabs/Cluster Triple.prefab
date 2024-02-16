@@ -58,7 +58,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3944303331389380601, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Name
-      value: Projectile Basic (3)
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -120,7 +120,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3944303331389380601, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Name
-      value: Projectile Basic (2)
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -182,7 +182,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3944303331389380601, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Name
-      value: Projectile Basic (1)
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.x
