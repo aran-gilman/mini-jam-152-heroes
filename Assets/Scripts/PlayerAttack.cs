@@ -35,11 +35,6 @@ public class PlayerAttack : MonoBehaviour
         float swordAngle = Mathf.Rad2Deg * Mathf.Atan2(
                 -direction.x, direction.y);
 
-        Debug.Log(playerPointer.transform.position);
-        //Debug.Log(toPointer);
-        Debug.Log(swordPos);
-        Debug.Log(swordAngle);
-
         sword.GetComponent<SwordSwing>().PerformAction(swordPos, swordAngle);
     }
 
