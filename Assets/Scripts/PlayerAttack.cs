@@ -34,12 +34,10 @@ public class PlayerAttack : MonoBehaviour
             transform.position, playerPointer.transform.position);
 
         Vector3 swordPos = toPointer.GetPoint(swordDistanceFromPlayer);
-        Quaternion swordRotation = Quaternion.Euler(0, 0, 
-            Mathf.Rad2Deg * Mathf.Atan2(
-                -playerPointer.transform.position.x, playerPointer.transform.position.y));
-        sword.transform.SetPositionAndRotation(swordPos, swordRotation);
+        float swordAngle = Mathf.Rad2Deg * Mathf.Atan2(
+                -playerPointer.transform.position.x, playerPointer.transform.position.y);
 
-        sword.GetComponent<Animator>().SetTrigger("Attack");
+        sword.GetComponent<SwordSwing>().PerformAction(swordPos, swordAngle);
     }
 
     private void OnEnable()

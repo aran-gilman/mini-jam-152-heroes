@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8519886571490500429}
   - component: {fileID: 1514606939284704175}
+  - component: {fileID: 3071696748566327029}
   m_Layer: 0
   m_Name: GreenSword
   m_TagString: Untagged
@@ -54,6 +55,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3071696748566327029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573822948397872176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27962e8c14da17d449ed3765d9c58e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5719613501205472980
 GameObject:
   m_ObjectHideFlags: 0
