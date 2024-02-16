@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 val = ctx.ReadValue<Vector2>();
         rb.velocity = val * moveSpeed;
-        Debug.Log(val);
     }
 
     private void Awake()
