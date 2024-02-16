@@ -22,4 +22,19 @@ public class SwordSwing : MonoBehaviour
         swordPosition = new GameObject("PlayerSwordSwingPosition");
         animationPosition.StateTransformMap.Add("SwordSwing", swordPosition.transform);
     }
+
+    private void OnEnable()
+    {
+        swordPosition.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        swordPosition.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(swordPosition);
+    }
 }
