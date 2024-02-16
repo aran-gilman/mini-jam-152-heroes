@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3806409282228355750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 79886822296016538}
+  m_Layer: 0
+  m_Name: EquipmentSlotB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &79886822296016538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806409282228355750}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.31, y: -0.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8361923275906214912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4307698746582907769
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +42,7 @@ GameObject:
   - component: {fileID: 8361923275906214912}
   - component: {fileID: 8678260819606650811}
   - component: {fileID: 5475234020087934320}
+  - component: {fileID: 6790899173395519923}
   - component: {fileID: 1670597448298752102}
   - component: {fileID: 7123913979717633071}
   - component: {fileID: 4730804672403324287}
@@ -35,6 +67,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7756179159450496021}
+  - {fileID: 2856089324523388256}
+  - {fileID: 79886822296016538}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8678260819606650811
@@ -134,6 +168,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6790899173395519923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307698746582907769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196a9d3a44316ee438a48324d1a8db64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordAPrefab: {fileID: 4573822948397872176, guid: 27deee472e40cbc4b806acf06e0b6b70, type: 3}
+  swordBPrefab: {fileID: 4573822948397872176, guid: 65feb42f2a2f5144f93904cd2b6b864a, type: 3}
+  slotA: {fileID: 6972395514673178113}
+  slotB: {fileID: 3806409282228355750}
 --- !u!50 &1670597448298752102
 Rigidbody2D:
   serializedVersion: 4
@@ -190,6 +240,39 @@ MonoBehaviour:
   attackAAction: {fileID: 8499627688174237656, guid: 1e611d021a144d94a87679f0781d9175, type: 3}
   attackBAction: {fileID: 7791982896888948950, guid: 1e611d021a144d94a87679f0781d9175, type: 3}
   playerPointer: {fileID: 8936984853788878575}
+  equipment: {fileID: 6790899173395519923}
+  swordDistanceFromPlayer: 1
+--- !u!1 &6972395514673178113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2856089324523388256}
+  m_Layer: 0
+  m_Name: EquipmentSlotA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2856089324523388256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6972395514673178113}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.34, y: -0.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8361923275906214912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7826909285081745262
 GameObject:
   m_ObjectHideFlags: 0
