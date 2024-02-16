@@ -30,7 +30,10 @@ public class SwordSwing : MonoBehaviour
 
     private void OnDisable()
     {
-        swordPosition.SetActive(false);
+        if (swordPosition != null)
+        {
+            swordPosition.SetActive(false);
+        }
     }
 
     private void OnDestroy()
