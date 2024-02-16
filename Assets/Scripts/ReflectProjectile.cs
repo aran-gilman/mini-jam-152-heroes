@@ -7,7 +7,6 @@ public class ReflectProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit!");
         if (collision.gameObject.TryGetComponent(out ProjectileBehavior projectile))
         {
             if (projectile.color == color)
