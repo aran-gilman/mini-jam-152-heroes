@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
+    public Color color;
+
     [SerializeField] Rigidbody2D rb;
     Transform player;
     Transform clusterCenter;
@@ -33,5 +35,10 @@ public class ProjectileBehavior : MonoBehaviour
 
         rb.velocity = direction.normalized * speed;
 
+    }
+
+    public void Reflect()
+    {
+        rb.velocity = -rb.velocity;
     }
 }
