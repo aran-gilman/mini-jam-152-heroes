@@ -6,6 +6,8 @@ public class ProjectileCluster : MonoBehaviour
 {
     Transform player;
     [SerializeField] bool facePlayer;
+    [SerializeField] float spinSpeed;
+    [SerializeField] float seperationDelay;
 
     private void Awake()
     {
@@ -27,13 +29,31 @@ public class ProjectileCluster : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (spinSpeed > 0)
+        {
+            transform.eulerAngles += Vector3.forward * spinSpeed * Time.fixedDeltaTime;
+        }
+    }
+
     public void Release()
     {
-        while(transform.childCount > 0)
+        StartCoroutine(ReleaseCoroutine());
+    }
+
+    IEnumerator ReleaseCoroutine()
+    {
+        for (int i = 0; i < transform.childCount; i++)
         {
-            Transform projectile = transform.GetChild(0);
-            projectile.parent = null;
-            projectile.gameObject.GetComponent<ProjectileBehavior>().Activate();
+            transform.GetChild(i).gameObject.GetComponent<ProjectileBehavior>().Activate();
+        }
+
+        yield return new WaitForSeconds(seperationDelay);
+
+        while (transform.childCount > 0)
+        {
+            transform.GetChild(0).parent = null;
         }
 
         Destroy(gameObject);
