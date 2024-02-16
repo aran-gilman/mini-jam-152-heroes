@@ -30,12 +30,15 @@ public class PlayerAttack : MonoBehaviour
 
     private void HandleAttack(GameObject sword)
     {
-        Ray toPointer = new Ray(
-            transform.position, playerPointer.transform.position);
-
-        Vector3 swordPos = toPointer.GetPoint(swordDistanceFromPlayer);
+        Vector3 direction = (playerPointer.transform.position - transform.position).normalized;
+        Vector3 swordPos = transform.position + direction * swordDistanceFromPlayer;  
         float swordAngle = Mathf.Rad2Deg * Mathf.Atan2(
-                -playerPointer.transform.position.x, playerPointer.transform.position.y);
+                -direction.x, direction.y);
+
+        Debug.Log(playerPointer.transform.position);
+        //Debug.Log(toPointer);
+        Debug.Log(swordPos);
+        Debug.Log(swordAngle);
 
         sword.GetComponent<SwordSwing>().PerformAction(swordPos, swordAngle);
     }
