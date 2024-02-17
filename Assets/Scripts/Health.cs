@@ -29,13 +29,12 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
-        onHit.Invoke();
-
         if (CurrentHealth <= 0)
         {
             CurrentHealth = 0;
             onDeath.Invoke();
         }
+        onHit.Invoke();
     }
 
     private void Awake()
