@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private int maxHealth;
+    public int MaxHealth => maxHealth;
 
     private enum ProjectileState
     {
