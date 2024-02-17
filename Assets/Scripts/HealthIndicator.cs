@@ -29,7 +29,10 @@ public class HealthIndicator : MonoBehaviour
     private void Awake()
     {
         textDisplay = GetComponentInChildren<Text>();
-        textFormat = textDisplay.text;
+        if (textDisplay != null)
+        {
+            textFormat = textDisplay.text;
+        }
 
         barDisplay = GetComponentInChildren<ProgressBar>();
     }
