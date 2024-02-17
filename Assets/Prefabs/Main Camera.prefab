@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8695991853816390414}
   - component: {fileID: 5259123132963364723}
   - component: {fileID: 1189575663043840782}
+  - component: {fileID: 6691151312969408950}
+  - component: {fileID: 7535389935235782859}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -113,3 +115,48 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &6691151312969408950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302082221665033929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1b24c14f7bf624cb8558a4f12642a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPhase: -1
+  onTargetPhaseEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7535389935235782859}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: PanToTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onOtherPhaseEnter:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7535389935235782859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302082221665033929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfcafbb9d698b574d8113d40a59d1878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpeed: 10
+  cameraTargetTag: CameraTarget
