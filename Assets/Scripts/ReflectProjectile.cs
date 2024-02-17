@@ -9,7 +9,7 @@ public class ReflectProjectile : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out ProjectileBehavior projectile))
         {
-            if (projectile.color == color)
+            if (!projectile.IsReflected && projectile.color == color)
             {
                 projectile.Reflect();
             }
