@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 0
+  justOnce: 0
   attackList:
   - {fileID: 3551073646541268111}
   - {fileID: 4575022429737094498}
@@ -86,7 +88,6 @@ MonoBehaviour:
   typeB: 0000000002000000
   typeC: 02000000
   typeD: 00000000
-  justOnce: 0
 --- !u!114 &3551073646541268111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,10 +193,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5325692911264950915}
   attackOrigin: {fileID: 8597184215306883534}
+  phaseDelay: 0
   idleTime: 1
   windupTime: 0.75
   attackTime: 0.33
-  phase1Attacks: {fileID: 1187602145347648053}
+  bossPhases:
+  - {fileID: 1187602145347648053}
+  - {fileID: 8988151444492258461}
+  health: {fileID: 485608396380684435}
 --- !u!114 &485608396380684435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,13 +311,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 0
+  justOnce: 1
   attackList:
   - {fileID: 8870906219646784400}
   typeA: 0000000002000000
   typeB: 0000000002000000
   typeC: 02000000
   typeD: 00000000
-  justOnce: 1
 --- !u!114 &8870906219646784400
 MonoBehaviour:
   m_ObjectHideFlags: 0
