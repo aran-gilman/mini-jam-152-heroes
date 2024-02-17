@@ -80,6 +80,9 @@ MonoBehaviour:
   attackList:
   - {fileID: 3551073646541268111}
   - {fileID: 5698553632333962892}
+  typeA: 0000000002000000
+  typeB: 0000000002000000
+  typeC: 01000000
 --- !u!114 &3551073646541268111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +130,7 @@ GameObject:
   - component: {fileID: 4887958056037545290}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

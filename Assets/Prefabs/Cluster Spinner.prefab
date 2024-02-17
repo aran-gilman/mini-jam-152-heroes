@@ -68,6 +68,10 @@ PrefabInstance:
       value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: rarity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: targetPlayer
       value: 0
       objectReference: {fileID: 0}
@@ -132,6 +136,10 @@ PrefabInstance:
     - target: {fileID: 3944303331389380601, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: rarity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: targetPlayer
@@ -264,6 +272,10 @@ PrefabInstance:
     - target: {fileID: 3944303331389380601, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: rarity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: targetPlayer
@@ -462,6 +474,10 @@ PrefabInstance:
     - target: {fileID: 3944303331389380601, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: rarity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: targetPlayer

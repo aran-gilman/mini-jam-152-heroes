@@ -6,9 +6,12 @@ public class ProjectileBehavior : MonoBehaviour
 {
     public ColorType color;
 
+    [SerializeField] List<Color> colorList = new List<Color>();
+    [SerializeField] SpriteRenderer sprite;
     [SerializeField] Rigidbody2D rb;
     Transform player;
     Transform clusterCenter;
+    public int rarity;
     [SerializeField] float speed;
     [SerializeField] bool targetPlayer;
 
@@ -16,6 +19,11 @@ public class ProjectileBehavior : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         clusterCenter = transform.parent;
+    }
+
+    private void Start()
+    {
+        sprite.color = colorList[((int)color)];
     }
 
     private void Update()

@@ -131,6 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ae57108bd06542a4bc467637ec2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: 0
+  colorList:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.013375282, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.028357267, b: 1, a: 1}
+  sprite: {fileID: 8613754522927281959}
   rb: {fileID: 2036829851697489772}
   speed: 4
   targetPlayer: 0
