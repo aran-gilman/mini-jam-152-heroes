@@ -16,6 +16,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] bool targetPlayer;
     [SerializeField] bool oppositeDirection;
+    float reflectSpeed = 8;
 
     public bool IsReflected { get; private set; }
 
@@ -59,7 +60,7 @@ public class ProjectileBehavior : MonoBehaviour
     public void Reflect()
     {
         Vector3 direction = GameObject.FindWithTag("Boss").transform.position - transform.position;
-        rb.velocity = direction.normalized * speed;
+        rb.velocity = direction.normalized * reflectSpeed;
         rb.drag = 0;
         transform.parent = null;
         IsReflected = true;

@@ -67,6 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27962e8c14da17d449ed3765d9c58e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSwing:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5719613501205472980
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +145,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -745909171, guid: 3e7530077f522cc49b27f1caaccafc74, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -244,6 +247,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7497250630495715388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,3 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372447fe6b3265a429dcf9fc7bbc7133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSwap:
+    m_PersistentCalls:
+      m_Calls: []

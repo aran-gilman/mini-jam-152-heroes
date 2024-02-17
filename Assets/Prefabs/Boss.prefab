@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5325692911264950915}
   attackOrigin: {fileID: 8597184215306883534}
-  phaseDelay: 0
+  phaseDelay: 1
   idleTime: 1
   windupTime: 0.75
   attackTime: 0.33
