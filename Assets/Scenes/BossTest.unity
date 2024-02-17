@@ -288,14 +288,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6790899173395519923, guid: 606c78eb7e27f33459d8e654bf8a5070, type: 3}
-      propertyPath: swordAPrefab
-      value: 
-      objectReference: {fileID: 4573822948397872176, guid: 65feb42f2a2f5144f93904cd2b6b864a, type: 3}
-    - target: {fileID: 6790899173395519923, guid: 606c78eb7e27f33459d8e654bf8a5070, type: 3}
-      propertyPath: swordBPrefab
-      value: 
-      objectReference: {fileID: 4573822948397872176, guid: 27deee472e40cbc4b806acf06e0b6b70, type: 3}
     - target: {fileID: 8361923275906214912, guid: 606c78eb7e27f33459d8e654bf8a5070, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
