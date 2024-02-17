@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1670597448298752102}
   - component: {fileID: 7123913979717633071}
   - component: {fileID: 4730804672403324287}
+  - component: {fileID: 1093171892179624208}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -242,6 +243,26 @@ MonoBehaviour:
   playerPointer: {fileID: 8936984853788878575}
   equipment: {fileID: 6790899173395519923}
   swordDistanceFromPlayer: 1
+--- !u!114 &1093171892179624208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307698746582907769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd9c14428cda924298acb68b730d5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  damagingProjectiles: 0
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6972395514673178113
 GameObject:
   m_ObjectHideFlags: 0

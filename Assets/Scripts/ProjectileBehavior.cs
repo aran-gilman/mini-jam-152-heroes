@@ -15,6 +15,8 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] bool targetPlayer;
 
+    public bool IsReflected { get; private set; }
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -48,5 +50,6 @@ public class ProjectileBehavior : MonoBehaviour
     public void Reflect()
     {
         rb.velocity = -rb.velocity;
+        IsReflected = true;
     }
 }
