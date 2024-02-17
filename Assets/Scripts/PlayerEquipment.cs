@@ -21,15 +21,13 @@ public class PlayerEquipment : MonoBehaviour
     {
         if (oldSword == SwordA)
         {
-            Destroy(SwordA);
-            SwordA = Instantiate(newSword, slotA.transform);
-            SetDefaultSwordLocation(SwordA, slotA);
+            SwordA = newSword;
+            SetSlot(SwordA, slotA);
         }
         else if (oldSword == SwordB)
         {
-            Destroy(SwordB);
-            SwordB = Instantiate(newSword, slotB.transform);
-            SetDefaultSwordLocation(SwordB, slotB);
+            SwordB = newSword;
+            SetSlot(SwordB, slotB);
         }
     }
 
@@ -46,6 +44,13 @@ public class PlayerEquipment : MonoBehaviour
     {
         Animator animator = sword.GetComponent<Animator>();
         RuntimeAnimationPosition animationPosition = animator.GetBehaviour<RuntimeAnimationPosition>();
-        animationPosition.StateTransformMap.Add("Default", equipmentSlot.transform);
+        animationPosition.StateTransformMap["Default"] = equipmentSlot.transform;
+    }
+
+    private void SetSlot(GameObject sword, GameObject slot)
+    {
+        sword.transform.parent = slot.transform;
+        sword.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        SetDefaultSwordLocation(sword, slot);
     }
 }
