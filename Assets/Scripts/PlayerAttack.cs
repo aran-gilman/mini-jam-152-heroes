@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private float swordDistanceFromPlayer = 1.0f;
 
+    private GameObject swordPosition;
+
     private void HandleAttackA(InputAction.CallbackContext ctx)
     {
         HandleAttack(equipment.SwordA);
@@ -35,7 +38,14 @@ public class PlayerAttack : MonoBehaviour
         float swordAngle = Mathf.Rad2Deg * Mathf.Atan2(
                 -direction.x, direction.y);
 
-        sword.GetComponent<SwordSwing>().PerformAction(swordPos, swordAngle);
+        swordPosition.transform.SetPositionAndRotation(
+            swordPos, Quaternion.Euler(0, 0, swordAngle));
+        sword.GetComponent<SwordSwing>().PerformAction(swordPosition.transform);
+    }
+
+    private void Awake()
+    {
+        swordPosition = new GameObject("PlayerSwordSwingPosition");
     }
 
     private void OnEnable()
