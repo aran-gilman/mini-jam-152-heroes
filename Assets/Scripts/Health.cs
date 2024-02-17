@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -41,6 +41,9 @@ public class Health : MonoBehaviour
     private ProjectileState damagingProjectiles;
 
     [SerializeField]
+    private float invincibilityTime = 0.5f;
+
+    [SerializeField]
     private UnityEvent onMaxHealthChange;
     public UnityEvent OnMaxHealthChange => onMaxHealthChange;
 
@@ -79,10 +82,25 @@ public class Health : MonoBehaviour
         }
     }
 
+    private bool isInvincible;
+
     public void NewPhaseHealth(int newHealth)
     {
         MaxHealth = newHealth;
         CurrentHealth = newHealth;
+    }
+
+    private void TakeDamage(int amount)
+    {
+        CurrentHealth -= amount;
+        StartCoroutine(RunInvincibilityCooldown());
+    }
+
+    private IEnumerator RunInvincibilityCooldown()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibilityTime);
+        isInvincible = false;
     }
 
     private void Awake()
@@ -92,18 +110,23 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isInvincible)
+        {
+            return;
+        }
+
         if (collision.gameObject.TryGetComponent(out ProjectileBehavior projectile))
         {
             if (projectile.IsReflected)
             {
                 if (damagingProjectiles == ProjectileState.Reflected)
                 {
-                    CurrentHealth -= 1;
+                    TakeDamage(1);
                 }
             }
             else if (damagingProjectiles == ProjectileState.Unreflected)
             {
-                CurrentHealth -= 1;
+                TakeDamage(1);
             }
         }
     }
