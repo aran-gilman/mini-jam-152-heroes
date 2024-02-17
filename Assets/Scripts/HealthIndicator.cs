@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,18 +7,34 @@ public class HealthIndicator : MonoBehaviour
     [SerializeField]
     private Health target;
 
-    private Text display;
+    private Text textDisplay;
     private string textFormat;
+
+    private ProgressBar barDisplay;
 
     private void OnHealthChange()
     {
-        display.text = string.Format(textFormat, target.CurrentHealth, target.MaxHealth);
+        if (textDisplay != null)
+        {
+            textDisplay.text = string.Format(
+                textFormat, target.CurrentHealth, target.MaxHealth);
+        }
+
+        if (barDisplay != null)
+        {
+            barDisplay.CurrentValue = target.CurrentHealth;
+        }
     }
 
     private void Awake()
     {
-        display = GetComponentInChildren<Text>();
-        textFormat = display.text;
+        textDisplay = GetComponentInChildren<Text>();
+        if (textDisplay != null)
+        {
+            textFormat = textDisplay.text;
+        }
+
+        barDisplay = GetComponentInChildren<ProgressBar>();
     }
 
     private void OnEnable()
