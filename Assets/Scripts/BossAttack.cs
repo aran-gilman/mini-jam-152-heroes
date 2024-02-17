@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossAttack : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class BossAttack : MonoBehaviour
     [SerializeField] Health health;
     GameObject heldPattern;
 
-
+    [SerializeField] UnityEvent onAllPhasesDone;
 
     private void Awake()
     {
@@ -73,6 +74,10 @@ public class BossAttack : MonoBehaviour
         if(currentPhase < bossPhases.Count)
         {
             StartCoroutine(DelayedStart());
+        }
+        else
+        {
+            onAllPhasesDone.Invoke();
         }
     }
 

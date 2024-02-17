@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Teleporter : MonoBehaviour
@@ -7,6 +8,12 @@ public class Teleporter : MonoBehaviour
 
     public void TeleportToTarget()
     {
+        StartCoroutine(DelayedTeleport());
+    }
+
+    private IEnumerator DelayedTeleport()
+    {
+        yield return null;
         GameObject target = GameObject.FindWithTag(targetTag);
         if (target != null)
         {

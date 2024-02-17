@@ -11,11 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed;
 
     private Rigidbody2D rb;
+    private Vector2 currentInput;
 
     private void HandleMove(InputAction.CallbackContext ctx)
     {
-        Vector2 val = ctx.ReadValue<Vector2>();
-        rb.velocity = val * moveSpeed;
+        currentInput = ctx.ReadValue<Vector2>();
     }
 
     private void Awake()
@@ -34,5 +34,10 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction.action.performed -= HandleMove;
         moveAction.action.canceled -= HandleMove;
+    }
+
+    private void Update()
+    {
+        rb.velocity = currentInput * moveSpeed;
     }
 }
