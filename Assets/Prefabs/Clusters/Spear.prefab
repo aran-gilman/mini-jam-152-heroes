@@ -192,10 +192,6 @@ PrefabInstance:
       value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
-      propertyPath: rarity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: oppositeDirection
       value: 1
       objectReference: {fileID: 0}
@@ -241,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.g
@@ -249,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

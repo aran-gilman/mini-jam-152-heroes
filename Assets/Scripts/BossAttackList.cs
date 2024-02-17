@@ -13,7 +13,7 @@ public class BossAttackList : MonoBehaviour
     [SerializeField] List<ColorType> typeD = new List<ColorType>();
     
 
-    public List<GameObject> GetAttackEntry(int x)
+    public (List<GameObject>,List<float>) GetAttackEntry(int x)
     {
         return attackList[x].RandomChoice();
     }

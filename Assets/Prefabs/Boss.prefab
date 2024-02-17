@@ -106,6 +106,7 @@ MonoBehaviour:
   - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
   sequenceB: []
   sequenceC: []
+  windupModifier: []
 --- !u!114 &4575022429737094498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
   sequenceB: []
   sequenceC: []
+  windupModifier: []
 --- !u!114 &5698553632333962892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,10 +139,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceA:
-  - {fileID: 4251195309559584130, guid: 5127f3b66dff6414eb0a36efcc4eca23, type: 3}
-  - {fileID: 4251195309559584130, guid: 19b81e7067fa32e4aa2c73eb846ed1bd, type: 3}
+  - {fileID: 4251195309559584130, guid: a4c1b852205814a42abff4ee3ca8fc0d, type: 3}
+  - {fileID: 4251195309559584130, guid: ceef711b034b1454d8f89f65bd98808d, type: 3}
   sequenceB: []
   sequenceC: []
+  windupModifier:
+  - 1
+  - 0.5
 --- !u!1 &7748681520012859364
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +205,7 @@ MonoBehaviour:
   bossPhases:
   - {fileID: 1187602145347648053}
   - {fileID: 8988151444492258461}
+  currentPhase: 0
   health: {fileID: 485608396380684435}
 --- !u!114 &485608396380684435
 MonoBehaviour:
@@ -326,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 0
+  startingHealth: 8
   justOnce: 1
   attackList:
   - {fileID: 8870906219646784400}
@@ -350,6 +356,7 @@ MonoBehaviour:
   - {fileID: 7750380470557658650, guid: 51aabe79e1b74dd4ea29f95bd1e63211, type: 3}
   sequenceB: []
   sequenceC: []
+  windupModifier: []
 --- !u!1 &8430282386676708376
 GameObject:
   m_ObjectHideFlags: 0

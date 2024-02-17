@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5998266840865064446, guid: 2c5cf958e26d8704c9cfaab52f789261, type: 3}
+      propertyPath: m_Text
+      value: Wizard Battle
+      objectReference: {fileID: 0}
     - target: {fileID: 8024086808273865582, guid: 2c5cf958e26d8704c9cfaab52f789261, type: 3}
       propertyPath: m_Name
       value: MainMenuUI

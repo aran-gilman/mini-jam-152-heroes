@@ -11,7 +11,7 @@ public class BossAttack : MonoBehaviour
     [SerializeField] float windupTime;
     [SerializeField] float attackTime;
     [SerializeField] List<BossAttackList> bossPhases = new List<BossAttackList>();
-    int currentPhase = 0;
+    [SerializeField] int currentPhase = 0;
     [SerializeField] Health health;
     GameObject heldPattern;
 
@@ -26,14 +26,20 @@ public class BossAttack : MonoBehaviour
     {
         for (int i = 0; i < bossPhases[currentPhase].AttackListLength(); i++)
         {
-            List<GameObject> currentAttack = bossPhases[currentPhase].GetAttackEntry(i);
+            List<GameObject> currentAttack;
+            List<float> windupModifier;
+            (currentAttack, windupModifier) = bossPhases[currentPhase].GetAttackEntry(i);
 
             for(int j = 0; j < currentAttack.Count; j++)
             {
                 animator.SetTrigger("Windup");
                 heldPattern = Instantiate(currentAttack[j], attackOrigin.position, Quaternion.identity, transform);
+                if(j >= windupModifier.Count)
+                {
+                    windupModifier.Add(1);
+                }
 
-                yield return new WaitForSeconds(windupTime);
+                yield return new WaitForSeconds(windupTime * windupModifier[j]);
 
                 animator.SetTrigger("Attack");
                 heldPattern.GetComponent<ProjectileCluster>().Release();
@@ -62,13 +68,13 @@ public class BossAttack : MonoBehaviour
         currentPhase++;
         if(currentPhase < bossPhases.Count)
         {
-            health.NewPhaseHealth(bossPhases[currentPhase].GetStartingHealth());
             StartCoroutine(DelayedStart());
         }
     }
 
     IEnumerator DelayedStart()
     {
+        health.NewPhaseHealth(bossPhases[currentPhase].GetStartingHealth());
         yield return new WaitForSeconds(phaseDelay);
         StartCoroutine(MainLoop());
     }
