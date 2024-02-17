@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8469265706554229795}
   - component: {fileID: 1019858466997850082}
   m_Layer: 0
-  m_Name: Spear
+  m_Name: Spear Random Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,14 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d075c1f9f8079a458b35583d5c868cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 1
-  startFacingPlayer: 0
-  facePlayer: 1
+  yOffset: -2.2
+  startFacingPlayer: 1
+  facePlayer: 0
   spinSpeed: 0
   seperationDelay: 0
-  randomXOffset: {x: 0, y: 0}
-  randomYOffset: {x: 0, y: 0}
-  randomFlipX: 0
+  randomXOffset: {x: 5, y: 6}
+  randomYOffset: {x: -2, y: 0}
+  randomFlipX: 1
 --- !u!1001 &733848550750703652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110,6 +110,18 @@ PrefabInstance:
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

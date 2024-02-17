@@ -10,6 +10,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Collider2D myCollider;
     Transform player;
     Transform clusterCenter;
     public int rarity;
@@ -52,6 +53,7 @@ public class ProjectileBehavior : MonoBehaviour
         }
 
         rb.velocity = direction.normalized * speed;
+        myCollider.enabled = true;
 
         animator.SetTrigger("Released");
 
@@ -64,5 +66,6 @@ public class ProjectileBehavior : MonoBehaviour
         rb.drag = 0;
         transform.parent = null;
         IsReflected = true;
+        sprite.color = Color.white;
     }
 }

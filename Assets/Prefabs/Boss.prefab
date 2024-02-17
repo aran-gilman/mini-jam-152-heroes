@@ -1,5 +1,118 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &980618566490952163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2775961165792607019}
+  - component: {fileID: 3371893336680662188}
+  - component: {fileID: 9098785887990209742}
+  - component: {fileID: 3511067085905222838}
+  - component: {fileID: 5795592410960505464}
+  m_Layer: 0
+  m_Name: Phase2Attacks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2775961165792607019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980618566490952163}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7218910662998751391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3371893336680662188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980618566490952163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 32
+  justOnce: 0
+  attackList:
+  - {fileID: 9098785887990209742}
+  typeA: 010000000100000001000000010000000000000002000000
+  typeB: 0000000002000000
+  typeC: 000000000200000001000000
+  typeD: 01000000
+--- !u!114 &9098785887990209742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980618566490952163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceA:
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  sequenceB: []
+  sequenceC: []
+  windupModifier: []
+--- !u!114 &3511067085905222838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980618566490952163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceA:
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  sequenceB: []
+  sequenceC: []
+  windupModifier: []
+--- !u!114 &5795592410960505464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980618566490952163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceA:
+  - {fileID: 4251195309559584130, guid: a4c1b852205814a42abff4ee3ca8fc0d, type: 3}
+  - {fileID: 4251195309559584130, guid: ceef711b034b1454d8f89f65bd98808d, type: 3}
+  sequenceB: []
+  sequenceC: []
+  windupModifier:
+  - 1
+  - 0.5
 --- !u!1 &1422104200385725616
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +295,7 @@ Transform:
   - {fileID: 8597184215306883534}
   - {fileID: 1939345015361780190}
   - {fileID: 8222868272690513460}
+  - {fileID: 2775961165792607019}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4887958056037545290
@@ -205,7 +319,8 @@ MonoBehaviour:
   bossPhases:
   - {fileID: 1187602145347648053}
   - {fileID: 8988151444492258461}
-  currentPhase: 0
+  - {fileID: 3371893336680662188}
+  currentPhase: 2
   health: {fileID: 485608396380684435}
 --- !u!114 &485608396380684435
 MonoBehaviour:
@@ -221,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 8
   damagingProjectiles: 1
+  invincibilityTime: 0
   onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []

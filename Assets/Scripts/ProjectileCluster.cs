@@ -6,17 +6,25 @@ public class ProjectileCluster : MonoBehaviour
 {
     Transform player;
     [SerializeField] float yOffset;
+    [SerializeField] bool startFacingPlayer;
     [SerializeField] bool facePlayer;
     [SerializeField] float spinSpeed;
     [SerializeField] float seperationDelay;
+    [SerializeField] Vector2 randomXOffset;
+    [SerializeField] Vector2 randomYOffset;
+    [SerializeField] bool randomFlipX;
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
 
-        transform.position += Vector3.up * yOffset;
+        float rxo = Random.Range(randomXOffset.x, randomXOffset.y);
+        float ryo = Random.Range(randomYOffset.x, randomYOffset.y);
+        if (randomFlipX) rxo *= Random.Range(0, 2) * 2 - 1;
 
-        if (facePlayer)
+        transform.position += Vector3.right * rxo + Vector3.up * (yOffset+ryo);
+
+        if (facePlayer || startFacingPlayer)
         {
             Vector3 facing = player.position - transform.position;
             transform.rotation = Quaternion.FromToRotation(Vector3.up, facing);
