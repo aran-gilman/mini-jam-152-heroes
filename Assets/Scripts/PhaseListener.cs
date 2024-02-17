@@ -26,12 +26,12 @@ public class PhaseListener : MonoBehaviour
 
     private void OnEnable()
     {
-        HandlePhaseChange(PlayerProgress.Instance.CurrentPhase);
-        PlayerProgress.Instance.OnPhaseChange += HandlePhaseChange;
+        HandlePhaseChange(PlayerProgress.CurrentPhase);
+        PlayerProgress.OnPhaseChange += HandlePhaseChange;
     }
 
     private void OnDisable()
     {
-        PlayerProgress.Instance.OnPhaseChange -= HandlePhaseChange;
+        PlayerProgress.OnPhaseChange -= HandlePhaseChange;
     }
 }

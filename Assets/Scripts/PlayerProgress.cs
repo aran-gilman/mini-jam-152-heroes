@@ -1,17 +1,7 @@
 public class PlayerProgress
 {
-    private static PlayerProgress instance;
-    public static PlayerProgress Instance
-    {
-        get
-        {
-            instance ??= new PlayerProgress();
-            return instance;
-        }
-    }
-
-    private int currentPhase = 0;
-    public int CurrentPhase
+    private static int currentPhase = 0;
+    public static int CurrentPhase
     {
         get => currentPhase;
         set
@@ -27,7 +17,7 @@ public class PlayerProgress
     }
 
     public delegate void PhaseEventHandler(int newPhase);
-    public event PhaseEventHandler OnPhaseChange;
+    public static event PhaseEventHandler OnPhaseChange;
 
     private PlayerProgress() { }
 }
