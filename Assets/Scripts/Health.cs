@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,6 +6,14 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private int maxHealth;
+
+    private enum ProjectileState
+    {
+        Unreflected,
+        Reflected,
+    }
+    [SerializeField]
+    private ProjectileState damagingProjectiles;
 
     [SerializeField]
     private UnityEvent onHit;
@@ -37,7 +46,17 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out ProjectileBehavior projectile))
         {
-            TakeDamage(1);
+            if (projectile.IsReflected)
+            {
+                if (damagingProjectiles == ProjectileState.Reflected)
+                {
+                    TakeDamage(1);
+                }
+            }
+            else if (damagingProjectiles == ProjectileState.Unreflected)
+            {
+                TakeDamage(1);
+            }
         }
     }
 }
