@@ -26,6 +26,20 @@ public class HealthIndicator : MonoBehaviour
         }
     }
 
+    private void OnMaxHealthChange()
+    {
+        if (textDisplay != null)
+        {
+            textDisplay.text = string.Format(
+                textFormat, target.CurrentHealth, target.MaxHealth);
+        }
+
+        if (barDisplay != null)
+        {
+            barDisplay.SetMaxValue(target.MaxHealth, target.CurrentHealth);
+        }
+    }
+
     private void Awake()
     {
         textDisplay = GetComponentInChildren<Text>();
@@ -39,16 +53,18 @@ public class HealthIndicator : MonoBehaviour
 
     private void OnEnable()
     {
-        target.OnHit.AddListener(OnHealthChange);
+        target.OnHealthChange.AddListener(OnHealthChange);
+        target.OnMaxHealthChange.AddListener(OnMaxHealthChange);
     }
 
     private void Start()
     {
-        OnHealthChange();
+        OnMaxHealthChange();
     }
 
     private void OnDisable()
     {
-        target.OnHit.RemoveListener(OnHealthChange);
+        target.OnHealthChange.RemoveListener(OnHealthChange);
+        target.OnMaxHealthChange.RemoveListener(OnMaxHealthChange);
     }
 }
