@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class SwapSword : MonoBehaviour
 {
+    private Animator animator;
     private GameObject swordRoot;
 
     private void Awake()
     {
-        swordRoot = GetComponentInParent<Animator>().gameObject;
+        animator = GetComponentInParent<Animator>();
+        swordRoot = animator.gameObject;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,6 +22,8 @@ public class SwapSword : MonoBehaviour
                 playerEquipment.SwapEquipment(swordRoot, newSword);
             }
             swordRoot.transform.parent = collision.transform;
+            swordRoot.transform.SetLocalPositionAndRotation(
+                Vector3.zero, Quaternion.identity);
         }
     }
 }

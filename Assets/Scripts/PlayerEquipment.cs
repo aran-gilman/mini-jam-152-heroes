@@ -19,6 +19,7 @@ public class PlayerEquipment : MonoBehaviour
 
     public void SwapEquipment(GameObject oldSword, GameObject newSword)
     {
+        SetDefaultSwordLocation(oldSword, null);
         if (oldSword == SwordA)
         {
             SwordA = newSword;
@@ -44,7 +45,16 @@ public class PlayerEquipment : MonoBehaviour
     {
         Animator animator = sword.GetComponent<Animator>();
         RuntimeAnimationPosition animationPosition = animator.GetBehaviour<RuntimeAnimationPosition>();
-        animationPosition.StateTransformMap["Default"] = equipmentSlot.transform;
+        if (equipmentSlot != null)
+        {
+            animationPosition.StateTransformMap["Equipped"] = equipmentSlot.transform;
+            animator.SetTrigger("Equip");
+        }
+        else
+        {
+            animationPosition.StateTransformMap.Remove("Equipped");
+            animator.SetTrigger("Drop");
+        }
     }
 
     private void SetSlot(GameObject sword, GameObject slot)
