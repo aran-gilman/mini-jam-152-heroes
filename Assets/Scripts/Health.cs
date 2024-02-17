@@ -57,7 +57,7 @@ public class Health : MonoBehaviour
     public int CurrentHealth
     {
         get => currentHealth;
-        private set
+        set
         {
             if (currentHealth == value)
             {
