@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class PhaseListener : MonoBehaviour
 {
+    [Tooltip("Set to -1 to target all phases.")]
     [SerializeField]
     private int targetPhase;
 
@@ -14,7 +15,7 @@ public class PhaseListener : MonoBehaviour
 
     private void HandlePhaseChange(int newPhase)
     {
-        if (newPhase == targetPhase)
+        if (targetPhase < 0 || newPhase == targetPhase)
         {
             onTargetPhaseEnter.Invoke();
         }
