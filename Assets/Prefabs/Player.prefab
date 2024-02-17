@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   damagingProjectiles: 0
+  invincibilityTime: 0.5
   onMaxHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -150,6 +151,8 @@ GameObject:
   - component: {fileID: 7123913979717633071}
   - component: {fileID: 4730804672403324287}
   - component: {fileID: 4856173519534534079}
+  - component: {fileID: 4391001445855005425}
+  - component: {fileID: 3273916780577834341}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -360,6 +363,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a9ae44b1a83614faacd1fd02bf066d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4391001445855005425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307698746582907769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f78db363c986f459e3b46fc8930a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTag: Respawn
+--- !u!114 &3273916780577834341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307698746582907769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1b24c14f7bf624cb8558a4f12642a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPhase: -1
+  onTargetPhaseEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4391001445855005425}
+        m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
+        m_MethodName: TeleportToTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onOtherPhaseEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6972395514673178113
 GameObject:
   m_ObjectHideFlags: 0
