@@ -6,7 +6,31 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private int maxHealth;
-    public int MaxHealth => maxHealth;
+
+    public int MaxHealth
+    {
+        get => maxHealth;
+        set
+        {
+            if (maxHealth == value)
+            {
+                return;
+            }
+
+            maxHealth = value;
+            if (maxHealth < 0)
+            {
+                maxHealth = 0;
+                onDeath.Invoke();
+            }
+
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            onMaxHealthChange.Invoke();
+        }
+    }
 
     private enum ProjectileState
     {
@@ -15,6 +39,10 @@ public class Health : MonoBehaviour
     }
     [SerializeField]
     private ProjectileState damagingProjectiles;
+
+    [SerializeField]
+    private UnityEvent onMaxHealthChange;
+    public UnityEvent OnMaxHealthChange => onMaxHealthChange;
 
     [SerializeField]
     private UnityEvent onHealthChange;
