@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SwapSword : MonoBehaviour
 {
+    [SerializeField]
+    private UnityEvent onSwap;
+
     private Animator animator;
     private GameObject swordRoot;
 
@@ -24,6 +28,7 @@ public class SwapSword : MonoBehaviour
             swordRoot.transform.parent = collision.transform;
             swordRoot.transform.SetLocalPositionAndRotation(
                 Vector3.zero, Quaternion.identity);
+            onSwap.Invoke();
         }
     }
 }
