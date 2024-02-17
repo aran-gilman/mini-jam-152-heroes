@@ -55,7 +55,10 @@ public class ProjectileBehavior : MonoBehaviour
 
     public void Reflect()
     {
-        rb.velocity = -rb.velocity;
+        Vector3 direction = GameObject.FindWithTag("Boss").transform.position - transform.position;
+        rb.velocity = direction.normalized * speed;
+        rb.drag = 0;
+        transform.parent = null;
         IsReflected = true;
     }
 }

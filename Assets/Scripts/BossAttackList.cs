@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class BossAttackList : MonoBehaviour
 {
+    [SerializeField] int startingHealth;
+    [SerializeField] bool justOnce;
     [SerializeField] List<BossListChoices> attackList = new List<BossListChoices>();
     [SerializeField] List<ColorType> typeA = new List<ColorType>();
     [SerializeField] List<ColorType> typeB = new List<ColorType>();
     [SerializeField] List<ColorType> typeC = new List<ColorType>();
     [SerializeField] List<ColorType> typeD = new List<ColorType>();
+    
 
     public List<GameObject> GetAttackEntry(int x)
     {
@@ -22,5 +25,15 @@ public class BossAttackList : MonoBehaviour
     public (List<ColorType>, List<ColorType>, List<ColorType>, List<ColorType>) GetPhaseColors()
     {
         return (typeA, typeB, typeC, typeD);
+    }
+
+    public bool AttackJustOnce()
+    {
+        return justOnce;
+    }
+
+    public int GetStartingHealth()
+    {
+        return startingHealth;
     }
 }

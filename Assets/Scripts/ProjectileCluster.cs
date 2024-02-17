@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileCluster : MonoBehaviour
 {
     Transform player;
+    [SerializeField] float yOffset;
     [SerializeField] bool facePlayer;
     [SerializeField] float spinSpeed;
     [SerializeField] float seperationDelay;
@@ -12,6 +13,8 @@ public class ProjectileCluster : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
+
+        transform.position += Vector3.up * yOffset;
 
         if (facePlayer)
         {

@@ -6,22 +6,25 @@ public class BossAttack : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Transform attackOrigin;
+    [SerializeField] float phaseDelay;
     [SerializeField] float idleTime;
     [SerializeField] float windupTime;
     [SerializeField] float attackTime;
-    [SerializeField] BossAttackList phase1Attacks;
+    [SerializeField] List<BossAttackList> bossPhases = new List<BossAttackList>();
+    int currentPhase = 0;
+    [SerializeField] Health health;
     
 
     private void Awake()
     {
-        StartCoroutine(MainLoop());
+        StartCoroutine(DelayedStart());
     }
 
     IEnumerator MainLoop()
     {
-        for (int i = 0; i < phase1Attacks.AttackListLength(); i++)
+        for (int i = 0; i < bossPhases[currentPhase].AttackListLength(); i++)
         {
-            List<GameObject> currentAttack = phase1Attacks.GetAttackEntry(i);
+            List<GameObject> currentAttack = bossPhases[currentPhase].GetAttackEntry(i);
 
             for(int j = 0; j < currentAttack.Count; j++)
             {
@@ -41,12 +44,29 @@ public class BossAttack : MonoBehaviour
             yield return new WaitForSeconds(idleTime);
         }
 
-        StartCoroutine(MainLoop());
+        if(!bossPhases[currentPhase].AttackJustOnce()) StartCoroutine(MainLoop());
     }
 
     public (List<ColorType>,List<ColorType>,List<ColorType>, List<ColorType>) GetPhaseColors()
     {
-        return phase1Attacks.GetPhaseColors();
+        return bossPhases[currentPhase].GetPhaseColors();
+    }
+
+    public void NextPhase()
+    {
+        StopAllCoroutines();
+        currentPhase++;
+        if(currentPhase < bossPhases.Count)
+        {
+            //HEALTH CHANGE GOES HERE
+            StartCoroutine(DelayedStart());
+        }
+    }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(phaseDelay);
+        StartCoroutine(MainLoop());
     }
 
 }
