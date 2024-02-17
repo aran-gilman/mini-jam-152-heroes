@@ -3,7 +3,7 @@ using UnityEngine;
 public class ReflectProjectile : MonoBehaviour
 {
     [SerializeField]
-    private Color color;
+    private ColorType color;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

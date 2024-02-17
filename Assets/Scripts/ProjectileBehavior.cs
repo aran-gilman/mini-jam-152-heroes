@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-    public Color color;
+    public ColorType color;
 
     [SerializeField] Rigidbody2D rb;
     Transform player;

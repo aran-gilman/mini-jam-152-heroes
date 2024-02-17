@@ -5,63 +5,43 @@ using UnityEngine;
 public class BossAttack : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] Transform attackOrigin;
     [SerializeField] float idleTime;
     [SerializeField] float windupTime;
     [SerializeField] float attackTime;
-    GameObject heldAttack;
-    [SerializeField] GameObject myOneAttack;
-    [SerializeField] GameObject myOtherAttack;
-    [SerializeField] Transform attackOrigin;
+    [SerializeField] BossAttackList phase1Attacks;
+    
 
     private void Awake()
     {
-        StartCoroutine(AttackTest());
+        StartCoroutine(MainLoop());
     }
 
-    IEnumerator AttackTest()
+    IEnumerator MainLoop()
     {
-        yield return new WaitForSeconds(idleTime);
+        for (int i = 0; i < phase1Attacks.AttackListLength(); i++)
+        {
+            List<GameObject> currentAttack = phase1Attacks.GetAttackEntry(i);
 
-        animator.SetTrigger("Windup");
-        heldAttack = Instantiate(myOtherAttack, attackOrigin.position, Quaternion.identity, transform);
+            for(int j = 0; j < currentAttack.Count; j++)
+            {
+                animator.SetTrigger("Windup");
+                GameObject heldPattern = Instantiate(currentAttack[j], attackOrigin.position, Quaternion.identity, transform);
 
-        yield return new WaitForSeconds(windupTime);
+                yield return new WaitForSeconds(windupTime);
 
-        animator.SetTrigger("Attack");
-        heldAttack.GetComponent<ProjectileCluster>().Release();
+                animator.SetTrigger("Attack");
+                heldPattern.GetComponent<ProjectileCluster>().Release();
 
-        yield return new WaitForSeconds(attackTime);
+                yield return new WaitForSeconds(attackTime);
+            }
 
-        animator.SetTrigger("Idle");
+            animator.SetTrigger("Idle");
 
-        yield return new WaitForSeconds(idleTime);
+            yield return new WaitForSeconds(idleTime);
+        }
 
-        animator.SetTrigger("Windup");
-        heldAttack = Instantiate(myOneAttack, attackOrigin.position, Quaternion.identity, transform);
-
-        yield return new WaitForSeconds(windupTime);
-
-        animator.SetTrigger("Attack");
-        heldAttack.GetComponent<ProjectileCluster>().Release();
-
-        yield return new WaitForSeconds(attackTime);
-
-        animator.SetTrigger("Windup");
-        heldAttack = Instantiate(myOneAttack, attackOrigin.position, Quaternion.identity, transform);
-
-        yield return new WaitForSeconds(windupTime);
-
-        animator.SetTrigger("Attack");
-        heldAttack.GetComponent<ProjectileCluster>().Release();
-
-        yield return new WaitForSeconds(attackTime);
-
-        animator.SetTrigger("Idle");
-
-        StartCoroutine(AttackTest());
+        StartCoroutine(MainLoop());
     }
-
-
-
 
 }
