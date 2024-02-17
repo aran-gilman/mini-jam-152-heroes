@@ -18,6 +18,8 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] bool targetPlayer;
     [SerializeField] bool oppositeDirection;
     float reflectSpeed = 8;
+    [SerializeField] bool bigShot;
+    float bigShotSize = .9f;
 
     public bool IsReflected { get; private set; }
 
@@ -25,6 +27,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         clusterCenter = transform.parent;
+        if (bigShot) transform.localScale = Vector3.one * bigShotSize;
     }
 
     private void Start()
@@ -67,5 +70,17 @@ public class ProjectileBehavior : MonoBehaviour
         transform.parent = null;
         IsReflected = true;
         sprite.color = Color.white;
+    }
+
+    public int Damage()
+    {
+        if(bigShot)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
     }
 }

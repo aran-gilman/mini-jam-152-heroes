@@ -8,11 +8,12 @@ public class ProjectileCluster : MonoBehaviour
     [SerializeField] float yOffset;
     [SerializeField] bool startFacingPlayer;
     [SerializeField] bool facePlayer;
-    [SerializeField] float spinSpeed;
-    [SerializeField] float seperationDelay;
     [SerializeField] Vector2 randomXOffset;
     [SerializeField] Vector2 randomYOffset;
     [SerializeField] bool randomFlipX;
+    [SerializeField] float spinSpeed;
+    [SerializeField] float seperationDelay;
+    [SerializeField] bool destroyProjectilesOnSeperation;
 
     private void Awake()
     {
@@ -104,7 +105,7 @@ public class ProjectileCluster : MonoBehaviour
 
         yield return new WaitForSeconds(seperationDelay);
 
-        while (transform.childCount > 0)
+        while (transform.childCount > 0 && !destroyProjectilesOnSeperation)
         {
             transform.GetChild(0).parent = null;
         }

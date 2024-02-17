@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2775961165792607019}
   - component: {fileID: 3371893336680662188}
-  - component: {fileID: 9098785887990209742}
   - component: {fileID: 3511067085905222838}
+  - component: {fileID: 9098785887990209742}
   - component: {fileID: 5795592410960505464}
   m_Layer: 0
-  m_Name: Phase2Attacks
+  m_Name: Phase3Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,11 +50,32 @@ MonoBehaviour:
   startingHealth: 32
   justOnce: 0
   attackList:
+  - {fileID: 3511067085905222838}
   - {fileID: 9098785887990209742}
-  typeA: 010000000100000001000000010000000000000002000000
+  - {fileID: 5795592410960505464}
+  typeA: 01000000010000000200000000000000
   typeB: 0000000002000000
   typeC: 000000000200000001000000
   typeD: 01000000
+--- !u!114 &3511067085905222838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980618566490952163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceA:
+  - {fileID: 1194776461182453383, guid: 017e75ef32ca1fd49a329ccb511b8279, type: 3}
+  - {fileID: 1194776461182453383, guid: 017e75ef32ca1fd49a329ccb511b8279, type: 3}
+  - {fileID: 1194776461182453383, guid: 017e75ef32ca1fd49a329ccb511b8279, type: 3}
+  sequenceB: []
+  sequenceC: []
+  windupModifier: []
 --- !u!114 &9098785887990209742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,28 +92,17 @@ MonoBehaviour:
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   sequenceB: []
   sequenceC: []
-  windupModifier: []
---- !u!114 &3511067085905222838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980618566490952163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sequenceA:
-  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
-  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
-  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
-  sequenceB: []
-  sequenceC: []
-  windupModifier: []
+  windupModifier:
+  - 1
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 2
 --- !u!114 &5795592410960505464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,13 +116,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceA:
-  - {fileID: 4251195309559584130, guid: a4c1b852205814a42abff4ee3ca8fc0d, type: 3}
-  - {fileID: 4251195309559584130, guid: ceef711b034b1454d8f89f65bd98808d, type: 3}
+  - {fileID: 7750380470557658650, guid: f9385d694636e8f45a18fcd5d6371d12, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier:
   - 1
-  - 0.5
+  - 2
 --- !u!1 &1422104200385725616
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +167,7 @@ GameObject:
   - component: {fileID: 4575022429737094498}
   - component: {fileID: 5698553632333962892}
   m_Layer: 0
-  m_Name: Phase1Attacks
+  m_Name: Phase2Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5325692911264950915}
   attackOrigin: {fileID: 8597184215306883534}
-  phaseDelay: 1
+  phaseDelay: 2
   idleTime: 1
   windupTime: 0.75
   attackTime: 0.33
@@ -321,7 +330,7 @@ MonoBehaviour:
   - {fileID: 1187602145347648053}
   - {fileID: 8988151444492258461}
   - {fileID: 3371893336680662188}
-  currentPhase: 2
+  currentPhase: 0
   health: {fileID: 485608396380684435}
 --- !u!114 &485608396380684435
 MonoBehaviour:
@@ -449,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 8
+  startingHealth: 16
   justOnce: 1
   attackList:
   - {fileID: 8870906219646784400}
@@ -670,6 +679,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324084487462302555, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7813724372048797038, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
