@@ -39,7 +39,7 @@ public class HealthIndicator : MonoBehaviour
 
     private void OnEnable()
     {
-        target.OnHit.AddListener(OnHealthChange);
+        target.OnHealthChange.AddListener(OnHealthChange);
     }
 
     private void Start()
@@ -49,6 +49,6 @@ public class HealthIndicator : MonoBehaviour
 
     private void OnDisable()
     {
-        target.OnHit.RemoveListener(OnHealthChange);
+        target.OnHealthChange.RemoveListener(OnHealthChange);
     }
 }

@@ -17,8 +17,8 @@ public class Health : MonoBehaviour
     private ProjectileState damagingProjectiles;
 
     [SerializeField]
-    private UnityEvent onHit;
-    public UnityEvent OnHit => onHit;
+    private UnityEvent onHealthChange;
+    public UnityEvent OnHealthChange => onHealthChange;
 
     [SerializeField]
     private UnityEvent onDeath;
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
             CurrentHealth = 0;
             onDeath.Invoke();
         }
-        onHit.Invoke();
+        onHealthChange.Invoke();
     }
 
     private void Awake()
