@@ -79,6 +79,12 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void NewPhaseHealth(int newHealth)
+    {
+        MaxHealth = newHealth;
+        CurrentHealth = newHealth;
+    }
+
     private void Awake()
     {
         CurrentHealth = maxHealth;

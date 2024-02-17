@@ -13,7 +13,9 @@ public class BossAttack : MonoBehaviour
     [SerializeField] List<BossAttackList> bossPhases = new List<BossAttackList>();
     int currentPhase = 0;
     [SerializeField] Health health;
-    
+    GameObject heldPattern;
+
+
 
     private void Awake()
     {
@@ -29,12 +31,13 @@ public class BossAttack : MonoBehaviour
             for(int j = 0; j < currentAttack.Count; j++)
             {
                 animator.SetTrigger("Windup");
-                GameObject heldPattern = Instantiate(currentAttack[j], attackOrigin.position, Quaternion.identity, transform);
+                heldPattern = Instantiate(currentAttack[j], attackOrigin.position, Quaternion.identity, transform);
 
                 yield return new WaitForSeconds(windupTime);
 
                 animator.SetTrigger("Attack");
                 heldPattern.GetComponent<ProjectileCluster>().Release();
+                heldPattern = null;
 
                 yield return new WaitForSeconds(attackTime);
             }
@@ -55,10 +58,11 @@ public class BossAttack : MonoBehaviour
     public void NextPhase()
     {
         StopAllCoroutines();
+        if (heldPattern != null) Destroy(heldPattern);
         currentPhase++;
         if(currentPhase < bossPhases.Count)
         {
-            //HEALTH CHANGE GOES HERE
+            health.NewPhaseHealth(bossPhases[currentPhase].GetStartingHealth());
             StartCoroutine(DelayedStart());
         }
     }
