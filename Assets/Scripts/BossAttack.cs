@@ -43,14 +43,18 @@ public class BossAttack : MonoBehaviour
 
                 animator.SetTrigger("Attack");
                 heldPattern.GetComponent<ProjectileCluster>().Release();
-                heldPattern = null;
 
                 yield return new WaitForSeconds(attackTime);
             }
 
+            if (currentAttack.Count >= windupModifier.Count)
+            {
+                windupModifier.Add(1); //adds one to the end for idle modifying
+            }
+
             animator.SetTrigger("Idle");
 
-            yield return new WaitForSeconds(idleTime);
+            yield return new WaitForSeconds(idleTime * windupModifier[currentAttack.Count]);
         }
 
         if(!bossPhases[currentPhase].AttackJustOnce()) StartCoroutine(MainLoop());
