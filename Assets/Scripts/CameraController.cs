@@ -43,6 +43,7 @@ public class CameraController : MonoBehaviour
             {
                 transform.position += distanceThisFrame * direction;
             }
+            yield return null;
         }
     }
 
