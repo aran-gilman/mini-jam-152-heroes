@@ -6,7 +6,31 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private int maxHealth;
-    public int MaxHealth => maxHealth;
+
+    public int MaxHealth
+    {
+        get => maxHealth;
+        set
+        {
+            if (maxHealth == value)
+            {
+                return;
+            }
+
+            maxHealth = value;
+            if (maxHealth < 0)
+            {
+                maxHealth = 0;
+                onDeath.Invoke();
+            }
+
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            onMaxHealthChange.Invoke();
+        }
+    }
 
     private enum ProjectileState
     {
@@ -17,24 +41,42 @@ public class Health : MonoBehaviour
     private ProjectileState damagingProjectiles;
 
     [SerializeField]
-    private UnityEvent onHit;
-    public UnityEvent OnHit => onHit;
+    private UnityEvent onMaxHealthChange;
+    public UnityEvent OnMaxHealthChange => onMaxHealthChange;
+
+    [SerializeField]
+    private UnityEvent onHealthChange;
+    public UnityEvent OnHealthChange => onHealthChange;
 
     [SerializeField]
     private UnityEvent onDeath;
+
     public UnityEvent OnDeath => onDeath;
 
-    public int CurrentHealth { get; private set; }
-
-    public void TakeDamage(int amount)
+    private int currentHealth;
+    public int CurrentHealth
     {
-        CurrentHealth -= amount;
-        if (CurrentHealth <= 0)
+        get => currentHealth;
+        private set
         {
-            CurrentHealth = 0;
-            onDeath.Invoke();
+            if (currentHealth == value)
+            {
+                return;
+            }
+
+            currentHealth = value;
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                onDeath.Invoke();
+            }
+            onHealthChange.Invoke();
         }
-        onHit.Invoke();
     }
 
     private void Awake()
@@ -50,12 +92,12 @@ public class Health : MonoBehaviour
             {
                 if (damagingProjectiles == ProjectileState.Reflected)
                 {
-                    TakeDamage(1);
+                    CurrentHealth -= 1;
                 }
             }
             else if (damagingProjectiles == ProjectileState.Unreflected)
             {
-                TakeDamage(1);
+                CurrentHealth -= 1;
             }
         }
     }
