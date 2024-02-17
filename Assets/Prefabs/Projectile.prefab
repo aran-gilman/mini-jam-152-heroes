@@ -139,8 +139,9 @@ MonoBehaviour:
   sprite: {fileID: 8613754522927281959}
   rb: {fileID: 2036829851697489772}
   rarity: 0
-  speed: 4
+  speed: 5
   targetPlayer: 0
+  oppositeDirection: 0
 --- !u!50 &2036829851697489772
 Rigidbody2D:
   serializedVersion: 4

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 8222868272690513460}
   - component: {fileID: 8988151444492258461}
   - component: {fileID: 3551073646541268111}
+  - component: {fileID: 4575022429737094498}
   - component: {fileID: 5698553632333962892}
   m_Layer: 0
   m_Name: Phase1Attacks
@@ -79,10 +80,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackList:
   - {fileID: 3551073646541268111}
+  - {fileID: 4575022429737094498}
   - {fileID: 5698553632333962892}
   typeA: 0000000002000000
   typeB: 0000000002000000
-  typeC: 01000000
+  typeC: 02000000
+  typeD: 00000000
 --- !u!114 &3551073646541268111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,9 +99,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceA:
-  - {fileID: 8676169465084828421, guid: e39cf9c6a4ad955468ba8240947256f0, type: 3}
-  - {fileID: 8676169465084828421, guid: e39cf9c6a4ad955468ba8240947256f0, type: 3}
-  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  sequenceB: []
+  sequenceC: []
+--- !u!114 &4575022429737094498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440557116340450632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceA:
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
   sequenceB: []
   sequenceC: []
 --- !u!114 &5698553632333962892
@@ -115,8 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceA:
   - {fileID: 4251195309559584130, guid: 5127f3b66dff6414eb0a36efcc4eca23, type: 3}
-  sequenceB:
-  - {fileID: 4859609400335479335, guid: dce99ba493e44be42baa6c85d20380a1, type: 3}
+  - {fileID: 4251195309559584130, guid: 19b81e7067fa32e4aa2c73eb846ed1bd, type: 3}
+  sequenceB: []
   sequenceC: []
 --- !u!1 &7748681520012859364
 GameObject:

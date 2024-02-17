@@ -14,6 +14,7 @@ public class ProjectileBehavior : MonoBehaviour
     public int rarity;
     [SerializeField] float speed;
     [SerializeField] bool targetPlayer;
+    [SerializeField] bool oppositeDirection;
 
     public bool IsReflected { get; private set; }
 
@@ -41,6 +42,11 @@ public class ProjectileBehavior : MonoBehaviour
         if (targetPlayer)
         {
             direction = player.position - transform.position;
+        }
+
+        if(oppositeDirection)
+        {
+            direction = direction * -1;
         }
 
         rb.velocity = direction.normalized * speed;

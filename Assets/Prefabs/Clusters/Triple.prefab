@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8469265706554229795}
   - component: {fileID: 1019858466997850082}
   m_Layer: 0
-  m_Name: Cluster Triple
+  m_Name: Triple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,6 +228,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

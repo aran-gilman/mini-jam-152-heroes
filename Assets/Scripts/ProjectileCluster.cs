@@ -19,13 +19,13 @@ public class ProjectileCluster : MonoBehaviour
             transform.rotation = Quaternion.FromToRotation(Vector3.up, facing);
         }
 
-        (List<ColorType>, List<ColorType>, List<ColorType>) phaseColors = GameObject.FindWithTag("Boss").GetComponent<BossAttack>().GetPhaseColors();
+        (List<ColorType>, List<ColorType>, List<ColorType>, List<ColorType>) phaseColors = GameObject.FindWithTag("Boss").GetComponent<BossAttack>().GetPhaseColors();
         List<ColorType> colorsPerRarity = new List<ColorType>();
 
         int r = Random.Range(0, phaseColors.Item1.Count);
         colorsPerRarity.Add(phaseColors.Item1[r]);
 
-        for(int i = 0; i < 100; i++)
+        for(int i = 0; i < 10; i++)
         {
             r = Random.Range(0, phaseColors.Item2.Count);
             if(phaseColors.Item2[r] != colorsPerRarity[0])
@@ -35,7 +35,7 @@ public class ProjectileCluster : MonoBehaviour
         }
         colorsPerRarity.Add(phaseColors.Item2[r]);
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10; i++)
         {
             r = Random.Range(0, phaseColors.Item3.Count);
             if (!colorsPerRarity.Contains(phaseColors.Item3[r]))
@@ -45,7 +45,17 @@ public class ProjectileCluster : MonoBehaviour
         }
         colorsPerRarity.Add(phaseColors.Item3[r]);
 
-        for(int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < 100; i++)
+        {
+            r = Random.Range(0, phaseColors.Item4.Count);
+            if (!colorsPerRarity.Contains(phaseColors.Item4[r]))
+            {
+                break;
+            }
+        }
+        colorsPerRarity.Add(phaseColors.Item4[r]);
+
+        for (int i = 0; i < transform.childCount; i++)
         {
             ProjectileBehavior PB = transform.GetChild(i).GetComponent<ProjectileBehavior>();
             PB.color = colorsPerRarity[PB.rarity];

@@ -8,6 +8,7 @@ public class BossAttackList : MonoBehaviour
     [SerializeField] List<ColorType> typeA = new List<ColorType>();
     [SerializeField] List<ColorType> typeB = new List<ColorType>();
     [SerializeField] List<ColorType> typeC = new List<ColorType>();
+    [SerializeField] List<ColorType> typeD = new List<ColorType>();
 
     public List<GameObject> GetAttackEntry(int x)
     {
@@ -18,8 +19,8 @@ public class BossAttackList : MonoBehaviour
     {
         return attackList.Count;
     }
-    public (List<ColorType>, List<ColorType>, List<ColorType>) GetPhaseColors()
+    public (List<ColorType>, List<ColorType>, List<ColorType>, List<ColorType>) GetPhaseColors()
     {
-        return (typeA, typeB, typeC);
+        return (typeA, typeB, typeC, typeD);
     }
 }

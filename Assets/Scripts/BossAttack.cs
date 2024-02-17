@@ -44,7 +44,7 @@ public class BossAttack : MonoBehaviour
         StartCoroutine(MainLoop());
     }
 
-    public (List<ColorType>,List<ColorType>,List<ColorType>) GetPhaseColors()
+    public (List<ColorType>,List<ColorType>,List<ColorType>, List<ColorType>) GetPhaseColors()
     {
         return phase1Attacks.GetPhaseColors();
     }
