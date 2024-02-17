@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,7 +19,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private float swordDistanceFromPlayer = 1.0f;
 
+    [SerializeField]
+    private float attackCooldown = 0.5f;
+
     private GameObject swordPosition;
+
+    private bool isOnCooldown = false;
 
     private void HandleAttackA(InputAction.CallbackContext ctx)
     {
@@ -32,6 +38,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void HandleAttack(GameObject sword)
     {
+        if (isOnCooldown)
+        {
+            return;
+        }
+
+        StartCoroutine(RunAttackCooldown());
+
         Vector3 direction = (playerPointer.transform.position - transform.position).normalized;
         Vector3 swordPos = transform.position + direction * swordDistanceFromPlayer;  
         float swordAngle = Mathf.Rad2Deg * Mathf.Atan2(
@@ -40,6 +53,13 @@ public class PlayerAttack : MonoBehaviour
         swordPosition.transform.SetPositionAndRotation(
             swordPos, Quaternion.Euler(0, 0, swordAngle));
         sword.GetComponent<SwordSwing>().PerformAction(swordPosition.transform);
+    }
+
+    private IEnumerator RunAttackCooldown()
+    {
+        isOnCooldown = true;
+        yield return new WaitForSeconds(attackCooldown);
+        isOnCooldown = false;
     }
 
     private void Awake()
