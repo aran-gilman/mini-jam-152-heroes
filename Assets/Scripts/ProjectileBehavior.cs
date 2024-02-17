@@ -8,6 +8,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     [SerializeField] List<Color> colorList = new List<Color>();
     [SerializeField] SpriteRenderer sprite;
+    [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rb;
     Transform player;
     Transform clusterCenter;
@@ -50,6 +51,8 @@ public class ProjectileBehavior : MonoBehaviour
         }
 
         rb.velocity = direction.normalized * speed;
+
+        animator.SetTrigger("Released");
 
     }
 
