@@ -40,7 +40,7 @@ public class ProgressBar : MonoBehaviour
         set
         {
             currentValue = value;
-            for (int i = 0; i < segments.Count; i++)
+            for (int i = 0; i < maxValue; i++)
             {
                 segments[i].sprite = GetSpriteForSegment(i);
             }
@@ -50,26 +50,42 @@ public class ProgressBar : MonoBehaviour
     private int currentValue;
     private readonly List<Image> segments = new List<Image>();
 
+    private bool hasRetrievedChildren = false;
+
     public void SetMaxValue(int newMax, int newCurrentValue)
     {
+        if (!hasRetrievedChildren)
+        {
+            RetrieveChildren();
+        }
+
         maxValue = newMax;
 
         RectTransform barRect = GetComponent<RectTransform>();
         RectTransform segmentRect = segmentPrefab.GetComponent<RectTransform>();
         barRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, segmentRect.sizeDelta.x * maxValue);
 
-        for (int i = maxValue; i < segments.Count; i++)
-        {
-            Destroy(segments[i].gameObject);
-            segments.RemoveAt(i);
-        }
-
+        // Add any missing segments
         for (int i = segments.Count; i < maxValue; i++)
         {
             GameObject newSegment = Instantiate(segmentPrefab, transform);
             segments.Add(newSegment.GetComponent<Image>());
         }
-        CurrentValue = newCurrentValue;
+
+        // Activate visible segments and give them the correct sprites
+        for (int i = 0; i < maxValue; i++)
+        {
+            segments[i].gameObject.SetActive(true);
+            segments[i].sprite = GetSpriteForSegment(i);
+        }
+
+        // Deactivate segments beyond the max value
+        for (int i = maxValue; i < segments.Count; i++)
+        {
+            segments[i].gameObject.SetActive(false);
+        }
+
+        currentValue = newCurrentValue;
     }
 
     private Sprite GetSpriteForSegment(int i)
@@ -97,7 +113,7 @@ public class ProgressBar : MonoBehaviour
         return i < currentValue ? fullSprite : emptySprite;
     }
 
-    private void Awake()
+    private void RetrieveChildren()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -106,6 +122,11 @@ public class ProgressBar : MonoBehaviour
                 segments.Add(image);
             }
         }
+        hasRetrievedChildren = true;
+    }
+
+    private void Awake()
+    {
         SetMaxValue(maxValue, maxValue);
     }
 }
