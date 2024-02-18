@@ -34,6 +34,7 @@ public class HealthIndicator : MonoBehaviour
         if (target != null)
         {
             SubscribeToTarget();
+            OnMaxHealthChange();
         }
     }
 
