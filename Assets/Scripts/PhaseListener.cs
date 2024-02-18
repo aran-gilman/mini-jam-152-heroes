@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,9 @@ public class PhaseListener : MonoBehaviour
     private int targetPhase;
 
     [SerializeField]
+    private bool delayToNextFrame = false;
+
+    [SerializeField]
     private UnityEvent onTargetPhaseEnter;
 
     [SerializeField]
@@ -15,13 +19,13 @@ public class PhaseListener : MonoBehaviour
 
     private void HandlePhaseChange(int newPhase)
     {
-        if (targetPhase < 0 || newPhase == targetPhase)
+        if (delayToNextFrame)
         {
-            onTargetPhaseEnter.Invoke();
+            StartCoroutine(DelayedInvokeEvent(newPhase));
         }
         else
         {
-            onOtherPhaseEnter.Invoke();
+            InvokeEvent(newPhase);
         }
     }
 
@@ -34,5 +38,23 @@ public class PhaseListener : MonoBehaviour
     private void OnDisable()
     {
         PlayerProgress.OnPhaseChange -= HandlePhaseChange;
+    }
+
+    private IEnumerator DelayedInvokeEvent(int newPhase)
+    {
+        yield return null;
+        InvokeEvent(newPhase);
+    }
+
+    private void InvokeEvent(int newPhase)
+    {
+        if (targetPhase < 0 || newPhase == targetPhase)
+        {
+            onTargetPhaseEnter.Invoke();
+        }
+        else
+        {
+            onOtherPhaseEnter.Invoke();
+        }
     }
 }
