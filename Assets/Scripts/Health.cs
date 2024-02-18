@@ -81,7 +81,6 @@ public class Health : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                print("health to 0");
                 currentHealth = 0;
                 onDeath.Invoke();
                 
@@ -107,7 +106,6 @@ public class Health : MonoBehaviour
     {
         CurrentHealth -= amount;
         onDamage.Invoke();
-        print("ow");
         StartCoroutine(RunInvincibilityCooldown());
     }
 
