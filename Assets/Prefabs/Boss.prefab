@@ -91,20 +91,20 @@ MonoBehaviour:
   sequenceA:
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: fbf905eeccfd2c148a14a1aa84cb2f49, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: fbf905eeccfd2c148a14a1aa84cb2f49, type: 3}
   sequenceB:
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: fbf905eeccfd2c148a14a1aa84cb2f49, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: fbf905eeccfd2c148a14a1aa84cb2f49, type: 3}
   sequenceC:
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: fbf905eeccfd2c148a14a1aa84cb2f49, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: fbf905eeccfd2c148a14a1aa84cb2f49, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   windupModifier:
   - 1
@@ -208,7 +208,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 26bcb5750ec9f8e449734219cdd52339, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -653,14 +653,14 @@ MonoBehaviour:
   sequenceC: []
   windupModifier:
   - 1
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
 --- !u!114 &441532897529888585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,7 +796,7 @@ MonoBehaviour:
   sequenceC: []
   windupModifier:
   - 1
-  - 0
+  - 0.5
 --- !u!1 &7748681520012859364
 GameObject:
   m_ObjectHideFlags: 0

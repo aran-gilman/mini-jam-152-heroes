@@ -4555,10 +4555,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887958056037545290, guid: 0d6f2ff8286740d49a30227adbff910f, type: 3}
-      propertyPath: startDelay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4887958056037545290, guid: 0d6f2ff8286740d49a30227adbff910f, type: 3}
       propertyPath: bossPhases.Array.size
       value: 2
       objectReference: {fileID: 0}
