@@ -121,12 +121,12 @@ public class Health : MonoBehaviour
             {
                 if (damagingProjectiles == ProjectileState.Reflected)
                 {
-                    TakeDamage(projectile.Damage());
+                    TakeDamage(projectile.ReflectedDamage());
                 }
             }
             else if (damagingProjectiles == ProjectileState.Unreflected)
             {
-                TakeDamage(projectile.Damage());
+                TakeDamage(projectile.UnreflectedDamage());
             }
         }
     }

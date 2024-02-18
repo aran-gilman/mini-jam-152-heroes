@@ -22,6 +22,8 @@ public class ProjectileBehavior : MonoBehaviour
     float bigShotSize = .9f;
     [SerializeField] float randomDegreeOffset;
     [SerializeField] bool startInvisible;
+    Vector2 reflectedDamage = new Vector2 (1, 2);
+    Vector2 unreflectedDamage = new Vector2(1, 1);
 
     public bool IsReflected { get; private set; }
 
@@ -80,15 +82,27 @@ public class ProjectileBehavior : MonoBehaviour
         sprite.color = Color.white;
     }
 
-    public int Damage()
+    public int ReflectedDamage()
     {
         if(bigShot)
         {
-            return 2;
+            return (int)reflectedDamage.y;
         }
         else
         {
-            return 1;
+            return (int)reflectedDamage.x;
+        }
+    }
+
+    public int UnreflectedDamage()
+    {
+        if (bigShot)
+        {
+            return (int)unreflectedDamage.y;
+        }
+        else
+        {
+            return (int)unreflectedDamage.x;
         }
     }
 
