@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 7810000390944724779}
   - component: {fileID: 441532897529888585}
   m_Layer: 0
-  m_Name: Phase4Attacks
+  m_Name: Phase5Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,9 @@ MonoBehaviour:
   startingHealth: 32
   justOnce: 0
   attackList:
+  - {fileID: 8813876348427610480}
   - {fileID: 7810000390944724779}
+  - {fileID: 441532897529888585}
   typeA: 0200000000000000
   typeB: 0000000002000000
   typeC: 01000000
@@ -255,19 +257,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceA:
-  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
+  - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
+  - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
   - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier:
   - 1
-  - 0.75
-  - 0.75
-  - 0.75
-  - 2
+  - 1
+  - 1
+  - 1
   - 3
 --- !u!114 &441532897529888585
 MonoBehaviour:
@@ -283,10 +283,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceA:
   - {fileID: 7750380470557658650, guid: f9385d694636e8f45a18fcd5d6371d12, type: 3}
+  - {fileID: 7750380470557658650, guid: 7293034443a6a0141a80645a358f5652, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier:
   - 1
+  - 2
   - 2
 --- !u!1 &6440557116340450632
 GameObject:
