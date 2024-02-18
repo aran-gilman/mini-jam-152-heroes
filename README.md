@@ -18,8 +18,6 @@ The code for this project is made available under the MIT License and art under 
 
 Additional asset credits:
 
-    - Tiny Dungeon, Pixel UI Pack, and Kenney fonts by Kenney Vleugels (www.kenney.nl), CC0, with edits by Tomasque
-	
-    - heart.png from Justin's 16x16 Icon Pack by Justin Arnold, CC-BY 4.0, with edits by Tomasque
-	
-    - 5 Action Chiptunes and The Essential Video Game Sound Effects Collection By Juhani Junkala, CC0
+- Tiny Dungeon, Pixel UI Pack, and Kenney fonts by Kenney Vleugels (www.kenney.nl), CC0, with edits by Tomasque
+- heart.png from Justin's 16x16 Icon Pack by Justin Arnold, CC-BY 4.0, with edits by Tomasque
+- 5 Action Chiptunes and The Essential Video Game Sound Effects Collection By Juhani Junkala, CC0
