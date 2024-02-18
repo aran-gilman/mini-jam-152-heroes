@@ -159,8 +159,8 @@ MonoBehaviour:
     Empty: {fileID: 215324044, guid: 99ac84fda3bce644897aa29494457872, type: 3}
     Full: {fileID: -1056558802, guid: 99ac84fda3bce644897aa29494457872, type: 3}
   midSegment:
-    Empty: {fileID: 2114044557, guid: 99ac84fda3bce644897aa29494457872, type: 3}
-    Full: {fileID: -1807678354, guid: 99ac84fda3bce644897aa29494457872, type: 3}
+    Empty: {fileID: 1805400558, guid: 89c08ad7dc20a784a8628ea7a1997be0, type: 3}
+    Full: {fileID: 21300000, guid: 131178176328a66429ecd99231d62cbc, type: 3}
   rightEndSegment:
     Empty: {fileID: 1033959241, guid: 99ac84fda3bce644897aa29494457872, type: 3}
     Full: {fileID: 1326558945, guid: 99ac84fda3bce644897aa29494457872, type: 3}
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2114044557, guid: 99ac84fda3bce644897aa29494457872, type: 3}
+  m_Sprite: {fileID: 1805400558, guid: 89c08ad7dc20a784a8628ea7a1997be0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

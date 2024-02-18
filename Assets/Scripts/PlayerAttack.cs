@@ -22,6 +22,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private float attackCooldown = 0.5f;
 
+    [SerializeField]
+    private GameObject swordIndicatorPrefab;
+
     private GameObject swordPosition;
 
     private bool isOnCooldown = false;
@@ -44,14 +47,6 @@ public class PlayerAttack : MonoBehaviour
         }
 
         StartCoroutine(RunAttackCooldown());
-
-        Vector3 direction = (playerPointer.transform.position - transform.position).normalized;
-        Vector3 swordPos = transform.position + direction * swordDistanceFromPlayer;  
-        float swordAngle = Mathf.Rad2Deg * Mathf.Atan2(
-                -direction.x, direction.y);
-
-        swordPosition.transform.SetPositionAndRotation(
-            swordPos, Quaternion.Euler(0, 0, swordAngle));
         sword.GetComponent<SwordSwing>().PerformAction(swordPosition.transform);
     }
 
@@ -64,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        swordPosition = new GameObject("PlayerSwordSwingPosition");
+        swordPosition = Instantiate(swordIndicatorPrefab);
     }
 
     private void OnEnable()
@@ -79,5 +74,16 @@ public class PlayerAttack : MonoBehaviour
     {
         attackAAction.action.started -= HandleAttackA;
         attackBAction.action.started -= HandleAttackB;
+    }
+
+    private void Update()
+    {
+        Vector3 direction = (playerPointer.transform.position - transform.position).normalized;
+        Vector3 swordPos = transform.position + direction * swordDistanceFromPlayer;
+        float swordAngle = Mathf.Rad2Deg * Mathf.Atan2(
+                -direction.x, direction.y);
+
+        swordPosition.transform.SetPositionAndRotation(
+            swordPos, Quaternion.Euler(0, 0, swordAngle));
     }
 }
