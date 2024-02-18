@@ -354,8 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a9d3a44316ee438a48324d1a8db64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordAPrefab: {fileID: 0}
-  swordBPrefab: {fileID: 0}
+  swordAPrefab: {fileID: 2121781350081029006, guid: aa5058083a2bedf46a75930605d5cfe6, type: 3}
+  swordBPrefab: {fileID: 3118677946463442615, guid: c55a53dc118c51842a2f0424bfdb5bbf, type: 3}
   slotA: {fileID: 6972395514673178113}
   slotB: {fileID: 3806409282228355750}
 --- !u!50 &1670597448298752102
@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPhase: -1
+  delayToNextFrame: 0
   onTargetPhaseEnter:
     m_PersistentCalls:
       m_Calls:
