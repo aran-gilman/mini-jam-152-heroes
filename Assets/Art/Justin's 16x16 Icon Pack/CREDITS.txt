@@ -1,7 +1,4 @@
-File: heart.png
-Author: Justin Arnold
+Files based on heart.png by Justin Arnold
+Edited by Tomasque
 License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 Source: https://zeromatrix.itch.io/rpgiab-icons
-
-File: heart_empty.png
-Edit by Aran Gilman of heart.png
