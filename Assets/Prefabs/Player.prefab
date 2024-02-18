@@ -159,6 +159,9 @@ MonoBehaviour:
       m_Calls: []
   onHealthChange:
     m_PersistentCalls:
+      m_Calls: []
+  onDamage:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3225307451343636631}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine

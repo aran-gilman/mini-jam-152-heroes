@@ -54,6 +54,10 @@ public class Health : MonoBehaviour
     public UnityEvent OnHealthChange => onHealthChange;
 
     [SerializeField]
+    private UnityEvent onDamage;
+    public UnityEvent OnDamage => onDamage;
+
+    [SerializeField]
     private UnityEvent onDeath;
 
     public UnityEvent OnDeath => onDeath;
@@ -97,6 +101,8 @@ public class Health : MonoBehaviour
     private void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
+        onDamage.Invoke();
+        print("ow");
         StartCoroutine(RunInvincibilityCooldown());
     }
 

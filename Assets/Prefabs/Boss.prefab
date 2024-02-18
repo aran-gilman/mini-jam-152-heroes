@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 3511067085905222838}
   - {fileID: 9098785887990209742}
   - {fileID: 5795592410960505464}
-  typeA: 01000000010000000200000000000000
+  typeA: 01000000
   typeB: 0000000002000000
   typeC: 000000000200000001000000
   typeD: 01000000
@@ -91,11 +91,21 @@ MonoBehaviour:
   sequenceA:
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  sequenceB:
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  sequenceC:
   - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
-  sequenceB: []
-  sequenceC: []
+  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
+  - {fileID: 1194776461182453383, guid: ab10980b16092694a927acd01ce41fa8, type: 3}
+  - {fileID: 1194776461182453383, guid: 968f186ca22685045957b6c66b7a3290, type: 3}
   windupModifier:
   - 1
   - 0.75
@@ -396,13 +406,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceA:
-  - {fileID: 4251195309559584130, guid: a4c1b852205814a42abff4ee3ca8fc0d, type: 3}
   - {fileID: 4251195309559584130, guid: ceef711b034b1454d8f89f65bd98808d, type: 3}
+  - {fileID: 4251195309559584130, guid: a4c1b852205814a42abff4ee3ca8fc0d, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier:
   - 1
-  - 0.5
+  - 0
 --- !u!1 &7748681520012859364
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7218910662998751391}
   - component: {fileID: 4887958056037545290}
+  - component: {fileID: 3944564743934365276}
   - component: {fileID: 485608396380684435}
   - component: {fileID: 1344352519226491721}
   m_Layer: 0
@@ -472,6 +483,19 @@ MonoBehaviour:
   onAllPhasesDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3944564743934365276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7748681520012859364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63df528f72f5e224f9d38c4c59844d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1303778832762726559}
 --- !u!114 &485608396380684435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +517,21 @@ MonoBehaviour:
   onHealthChange:
     m_PersistentCalls:
       m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3944564743934365276}
+        m_TargetAssemblyTypeName: BossHurtRed, Assembly-CSharp
+        m_MethodName: TurnRed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeath:
     m_PersistentCalls:
       m_Calls:

@@ -25,6 +25,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] bool startInvisible;
     Vector2 reflectedDamage = new Vector2 (1, 2);
     Vector2 unreflectedDamage = new Vector2(1, 1);
+    float shotFlashTime = .09f;
 
     public bool IsReflected { get; private set; }
 
@@ -33,7 +34,11 @@ public class ProjectileBehavior : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         boss = GameObject.FindWithTag("Boss").transform;
         clusterCenter = transform.parent;
-        if (bigShot) transform.localScale = Vector3.one * bigShotSize;
+        if (bigShot)
+        {
+            transform.localScale = Vector3.one * bigShotSize;
+            StartCoroutine(BigShotFlash());
+        }
     }
 
     private void Start()
@@ -88,7 +93,9 @@ public class ProjectileBehavior : MonoBehaviour
 
     public int ReflectedDamage()
     {
-        if(bigShot)
+        Destroy(gameObject);
+
+        if (bigShot)
         {
             return (int)reflectedDamage.y;
         }
@@ -120,5 +127,23 @@ public class ProjectileBehavior : MonoBehaviour
         }
 
         StartCoroutine(SelfDestructTimer());
+    }
+
+    IEnumerator BigShotFlash()
+    {
+        yield return new WaitForSeconds(shotFlashTime);
+
+        if (!IsReflected)
+        {
+            sprite.color = (Color.white + colorList[((int)color)])/2;
+        }
+
+        yield return new WaitForSeconds(shotFlashTime);
+
+        if (!IsReflected)
+        {
+            sprite.color = colorList[((int)color)];
+            StartCoroutine(BigShotFlash());
+        }
     }
 }
