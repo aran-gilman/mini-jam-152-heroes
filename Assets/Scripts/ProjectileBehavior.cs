@@ -21,6 +21,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] bool bigShot;
     float bigShotSize = .9f;
     [SerializeField] float randomDegreeOffset;
+    [SerializeField] bool startInvisible;
 
     public bool IsReflected { get; private set; }
 
@@ -34,6 +35,8 @@ public class ProjectileBehavior : MonoBehaviour
     private void Start()
     {
         sprite.color = colorList[((int)color)];
+        if (startInvisible) sprite.color = Color.clear;
+        StartCoroutine(SelfDestructTimer());
     }
 
     private void Update()
@@ -61,6 +64,7 @@ public class ProjectileBehavior : MonoBehaviour
 
         rb.velocity = direction.normalized * speed;
         myCollider.enabled = true;
+        if(startInvisible) sprite.color = colorList[((int)color)];
 
         animator.SetTrigger("Released");
 
@@ -86,5 +90,12 @@ public class ProjectileBehavior : MonoBehaviour
         {
             return 1;
         }
+    }
+
+    IEnumerator SelfDestructTimer()
+    {
+        yield return new WaitForSeconds(15f);
+
+        Destroy(gameObject);
     }
 }

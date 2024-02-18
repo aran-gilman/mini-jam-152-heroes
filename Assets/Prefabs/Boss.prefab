@@ -163,8 +163,8 @@ GameObject:
   m_Component:
   - component: {fileID: 570890071285046329}
   - component: {fileID: 2046678932088990946}
-  - component: {fileID: 8813876348427610480}
   - component: {fileID: 7810000390944724779}
+  - component: {fileID: 8813876348427610480}
   - component: {fileID: 441532897529888585}
   m_Layer: 0
   m_Name: Phase5Attacks
@@ -203,47 +203,13 @@ MonoBehaviour:
   startingHealth: 32
   justOnce: 0
   attackList:
-  - {fileID: 8813876348427610480}
   - {fileID: 7810000390944724779}
+  - {fileID: 8813876348427610480}
   - {fileID: 441532897529888585}
-  typeA: 0200000000000000
-  typeB: 0000000002000000
+  typeA: 00000000
+  typeB: 02000000
   typeC: 01000000
-  typeD: 010000000000000002000000
---- !u!114 &8813876348427610480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4923290677993700144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sequenceA:
-  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
-  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
-  - {fileID: 8676169465084828421, guid: 75f1e72cecceb0742baee45533d787b3, type: 3}
-  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
-  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
-  - {fileID: 8676169465084828421, guid: 75f1e72cecceb0742baee45533d787b3, type: 3}
-  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
-  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
-  - {fileID: 8676169465084828421, guid: 75f1e72cecceb0742baee45533d787b3, type: 3}
-  sequenceB: []
-  sequenceC: []
-  windupModifier:
-  - 1
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
+  typeD: 0000000002000000
 --- !u!114 &7810000390944724779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,15 +226,47 @@ MonoBehaviour:
   - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
   - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
   - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
-  - {fileID: 1194776461182453383, guid: 771425b88f7b3ff409e7a8552e2b15be, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier:
   - 1
   - 1
   - 1
+  - 2
+--- !u!114 &8813876348427610480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4923290677993700144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34a0c0e743ced04f8eb5346ec5ef39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceA:
+  - {fileID: 1194776461182453383, guid: b0267fc4b99ef2549bc749bb92edcaee, type: 3}
+  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
+  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
+  - {fileID: 1194776461182453383, guid: b0267fc4b99ef2549bc749bb92edcaee, type: 3}
+  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
+  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
+  - {fileID: 1194776461182453383, guid: b0267fc4b99ef2549bc749bb92edcaee, type: 3}
+  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
+  - {fileID: 1194776461182453383, guid: a2dc412c75d9d914eb921793211a7fd1, type: 3}
+  sequenceB: []
+  sequenceC: []
+  windupModifier:
   - 1
-  - 3
+  - 0.15
+  - 0.15
+  - 0.15
+  - 0.15
+  - 0.15
+  - 0.15
+  - 0.15
+  - 0.15
 --- !u!114 &441532897529888585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,13 +280,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceA:
-  - {fileID: 7750380470557658650, guid: f9385d694636e8f45a18fcd5d6371d12, type: 3}
   - {fileID: 7750380470557658650, guid: 7293034443a6a0141a80645a358f5652, type: 3}
+  - {fileID: 7750380470557658650, guid: f9385d694636e8f45a18fcd5d6371d12, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier:
   - 1
-  - 2
+  - 1
   - 2
 --- !u!1 &6440557116340450632
 GameObject:
