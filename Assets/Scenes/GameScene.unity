@@ -4441,10 +4441,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887958056037545290, guid: 0d6f2ff8286740d49a30227adbff910f, type: 3}
-      propertyPath: currentPhase
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4887958056037545290, guid: 0d6f2ff8286740d49a30227adbff910f, type: 3}
       propertyPath: bossPhases.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4626,7 +4622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1b24c14f7bf624cb8558a4f12642a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPhase: 0
+  targetPhase: 1
   delayToNextFrame: 0
   onTargetPhaseEnter:
     m_PersistentCalls:
@@ -4670,7 +4666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1b24c14f7bf624cb8558a4f12642a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPhase: 1
+  targetPhase: 0
   delayToNextFrame: 0
   onTargetPhaseEnter:
     m_PersistentCalls:
