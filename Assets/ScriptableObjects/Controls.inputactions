@@ -769,6 +769,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "EditorOnly",
+            "id": "4b2ade12-ca30-4bc0-9deb-4ac704bcee21",
+            "actions": [
+                {
+                    "name": "TakeScreenshot",
+                    "type": "Button",
+                    "id": "f575c0eb-1556-4d85-9271-93adeb86f3cb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9e95e5ab-7c63-4bc4-884b-b160262c8aa6",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TakeScreenshot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
