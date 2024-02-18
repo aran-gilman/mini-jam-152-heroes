@@ -20,6 +20,7 @@ public class ProjectileBehavior : MonoBehaviour
     float reflectSpeed = 8;
     [SerializeField] bool bigShot;
     float bigShotSize = .9f;
+    [SerializeField] float randomDegreeOffset;
 
     public bool IsReflected { get; private set; }
 
@@ -54,6 +55,9 @@ public class ProjectileBehavior : MonoBehaviour
         {
             direction = direction * -1;
         }
+
+        float offset = Random.Range(-randomDegreeOffset, randomDegreeOffset);
+        direction = Quaternion.Euler(Vector3.forward * offset) * direction;
 
         rb.velocity = direction.normalized * speed;
         myCollider.enabled = true;

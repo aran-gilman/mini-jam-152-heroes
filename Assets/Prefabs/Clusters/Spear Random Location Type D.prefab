@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8469265706554229795}
   - component: {fileID: 1019858466997850082}
   m_Layer: 0
-  m_Name: Triple
+  m_Name: Spear Random Location Type D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4530362962876560245}
   - {fileID: 8962132730850083585}
+  - {fileID: 4530362962876560245}
   - {fileID: 5713848115537359929}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,15 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d075c1f9f8079a458b35583d5c868cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 1
-  startFacingPlayer: 0
-  facePlayer: 1
-  randomXOffset: {x: 0, y: 0}
-  randomYOffset: {x: 0, y: 0}
-  randomFlipX: 0
+  yOffset: -2.2
+  startFacingPlayer: 1
+  facePlayer: 0
   spinSpeed: 0
   seperationDelay: 0
-  destroyProjectilesOnSeperation: 0
+  randomXOffset: {x: 5, y: 6}
+  randomYOffset: {x: -2, y: 0}
+  randomFlipX: 1
 --- !u!1001 &733848550750703652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69,16 +68,16 @@ PrefabInstance:
       value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
-      propertyPath: rarity
-      value: 2
+      propertyPath: oppositeDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.075
+      value: -1.125
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -114,11 +113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.r
@@ -146,17 +145,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
-    - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
-      propertyPath: rarity
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.075
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -189,18 +184,6 @@ PrefabInstance:
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -225,8 +208,8 @@ PrefabInstance:
       value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 4681403772217298261, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
-      propertyPath: rarity
-      value: 2
+      propertyPath: oppositeDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -234,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: -0.375
       objectReference: {fileID: 0}
     - target: {fileID: 5000277376711386141, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -270,11 +253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8613754522927281959, guid: c944fac038d329d4ea11edbda275a7ed, type: 3}
       propertyPath: m_Color.r

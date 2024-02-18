@@ -7,6 +7,7 @@ public class BossAttack : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Transform attackOrigin;
+    [SerializeField] float startDelay;
     [SerializeField] float phaseDelay;
     [SerializeField] float idleTime;
     [SerializeField] float windupTime;
@@ -20,7 +21,7 @@ public class BossAttack : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(DelayedStart());
+        StartCoroutine(DelayedStart(startDelay));
     }
 
     IEnumerator MainLoop()
@@ -73,7 +74,7 @@ public class BossAttack : MonoBehaviour
         currentPhase++;
         if(currentPhase < bossPhases.Count)
         {
-            StartCoroutine(DelayedStart());
+            StartCoroutine(DelayedStart(phaseDelay));
         }
         else
         {
@@ -81,10 +82,10 @@ public class BossAttack : MonoBehaviour
         }
     }
 
-    IEnumerator DelayedStart()
+    IEnumerator DelayedStart(float delay)
     {
         health.NewPhaseHealth(bossPhases[currentPhase].GetStartingHealth());
-        yield return new WaitForSeconds(phaseDelay);
+        yield return new WaitForSeconds(delay);
         StartCoroutine(MainLoop());
     }
 

@@ -354,8 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a9d3a44316ee438a48324d1a8db64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordAPrefab: {fileID: 4573822948397872176, guid: a517c2e4b2009b143aa46eadd6737d01, type: 3}
-  swordBPrefab: {fileID: 4573822948397872176, guid: 27deee472e40cbc4b806acf06e0b6b70, type: 3}
+  swordAPrefab: {fileID: 0}
+  swordBPrefab: {fileID: 0}
   slotA: {fileID: 6972395514673178113}
   slotB: {fileID: 3806409282228355750}
 --- !u!50 &1670597448298752102
