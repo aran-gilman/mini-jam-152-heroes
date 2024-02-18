@@ -6,6 +6,9 @@ public class PlayerPointer : MonoBehaviour
     [SerializeField]
     private InputActionReference pointerPosition;
 
+    [SerializeField]
+    private bool hideCursor = true;
+
     private Camera mainCamera;
 
     private void HandlePoint(InputAction.CallbackContext ctx)
@@ -22,12 +25,20 @@ public class PlayerPointer : MonoBehaviour
 
     private void OnEnable()
     {
+        if (hideCursor)
+        {
+            Cursor.visible = false;
+        }    
         pointerPosition.action.actionMap.Enable();
         pointerPosition.action.performed += HandlePoint;
     }
 
     private void OnDisable()
     {
+        if (hideCursor)
+        {
+            Cursor.visible = true;
+        }
         pointerPosition.action.performed -= HandlePoint;
     }
 }
