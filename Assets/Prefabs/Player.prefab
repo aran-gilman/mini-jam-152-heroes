@@ -529,6 +529,7 @@ MonoBehaviour:
   equipment: {fileID: 6790899173395519923}
   swordDistanceFromPlayer: 1
   attackCooldown: 0.5
+  swordIndicatorPrefab: {fileID: 2300424181325053714, guid: 3c52ad2a623eff04eb68b29628c2b03a, type: 3}
 --- !u!114 &4856173519534534079
 MonoBehaviour:
   m_ObjectHideFlags: 0

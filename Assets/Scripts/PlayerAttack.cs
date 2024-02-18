@@ -22,6 +22,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private float attackCooldown = 0.5f;
 
+    [SerializeField]
+    private GameObject swordIndicatorPrefab;
+
     private GameObject swordPosition;
 
     private bool isOnCooldown = false;
@@ -64,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        swordPosition = new GameObject("PlayerSwordSwingPosition");
+        swordPosition = Instantiate(swordIndicatorPrefab);
     }
 
     private void OnEnable()
