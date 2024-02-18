@@ -360,7 +360,7 @@ MonoBehaviour:
   sequenceA:
   - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
   - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
-  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: e273d6c1740bb4542a64d56d5fbde461, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier: []
@@ -379,7 +379,7 @@ MonoBehaviour:
   sequenceA:
   - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
   - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
-  - {fileID: 1194776461182453383, guid: 1532e488f6651dc4e9c5bb8b87011245, type: 3}
+  - {fileID: 1194776461182453383, guid: e273d6c1740bb4542a64d56d5fbde461, type: 3}
   sequenceB: []
   sequenceC: []
   windupModifier: []

@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 110188477}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.32, y: 15.89, z: 0}
+  m_LocalPosition: {x: -5, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,6 +244,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3324084487462302555, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436522223864048718, guid: 530bc3a3cbe1baa4491e4927a541f0db, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4438,7 +4454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4887958056037545290, guid: 0d6f2ff8286740d49a30227adbff910f, type: 3}
       propertyPath: startDelay
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4887958056037545290, guid: 0d6f2ff8286740d49a30227adbff910f, type: 3}
       propertyPath: bossPhases.Array.size

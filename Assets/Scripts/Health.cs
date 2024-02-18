@@ -20,8 +20,10 @@ public class Health : MonoBehaviour
             maxHealth = value;
             if (maxHealth < 0)
             {
+                print("maxhealth to 0");
                 maxHealth = 0;
                 onDeath.Invoke();
+                
             }
 
             if (currentHealth > maxHealth)
@@ -75,8 +77,10 @@ public class Health : MonoBehaviour
 
             if (currentHealth <= 0)
             {
+                print("health to 0");
                 currentHealth = 0;
                 onDeath.Invoke();
+                
             }
             onHealthChange.Invoke();
         }

@@ -12,6 +12,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Collider2D myCollider;
     Transform player;
+    Transform boss;
     Transform clusterCenter;
     public int rarity;
     [SerializeField] float speed;
@@ -30,6 +31,7 @@ public class ProjectileBehavior : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
+        boss = GameObject.FindWithTag("Boss").transform;
         clusterCenter = transform.parent;
         if (bigShot) transform.localScale = Vector3.one * bigShotSize;
     }
@@ -74,7 +76,9 @@ public class ProjectileBehavior : MonoBehaviour
 
     public void Reflect()
     {
-        Vector3 direction = GameObject.FindWithTag("Boss").transform.position - transform.position;
+        if (!bigShot) Destroy(gameObject);
+
+        Vector3 direction = boss.position - transform.position;
         rb.velocity = direction.normalized * reflectSpeed;
         rb.drag = 0;
         transform.parent = null;
@@ -108,8 +112,13 @@ public class ProjectileBehavior : MonoBehaviour
 
     IEnumerator SelfDestructTimer()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(5f);
 
-        Destroy(gameObject);
+        if ((transform.position - boss.position).magnitude > 20)
+        {
+            Destroy(gameObject);
+        }
+
+        StartCoroutine(SelfDestructTimer());
     }
 }

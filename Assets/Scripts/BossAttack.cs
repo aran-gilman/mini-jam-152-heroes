@@ -69,6 +69,7 @@ public class BossAttack : MonoBehaviour
 
     public void NextPhase()
     {
+        print("nextphase");
         StopAllCoroutines();
         if (heldPattern != null) Destroy(heldPattern);
         currentPhase++;
