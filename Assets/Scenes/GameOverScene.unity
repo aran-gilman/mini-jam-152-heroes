@@ -373,6 +373,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1769626072138818771, guid: 2c5cf958e26d8704c9cfaab52f789261, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4803068695409381538, guid: 2c5cf958e26d8704c9cfaab52f789261, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -455,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5942770958789652831, guid: 2c5cf958e26d8704c9cfaab52f789261, type: 3}
       propertyPath: m_Text
-      value: Restart
+      value: Restart Phase
       objectReference: {fileID: 0}
     - target: {fileID: 5998266840865064446, guid: 2c5cf958e26d8704c9cfaab52f789261, type: 3}
       propertyPath: m_Text
