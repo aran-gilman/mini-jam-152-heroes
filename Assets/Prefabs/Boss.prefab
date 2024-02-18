@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 32
+  startingHealth: 16
   justOnce: 0
   attackList:
   - {fileID: 3511067085905222838}
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 32
+  startingHealth: 16
   justOnce: 0
   attackList:
   - {fileID: 7810000390944724779}
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 16
+  startingHealth: 12
   justOnce: 0
   attackList:
   - {fileID: 3551073646541268111}
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 16
+  startingHealth: 8
   justOnce: 1
   attackList:
   - {fileID: 8870906219646784400}
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0b8d576202a0a44a463d9259da345e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 16
+  startingHealth: 12
   justOnce: 1
   attackList:
   - {fileID: 93767038452458691}
