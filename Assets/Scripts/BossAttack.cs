@@ -17,6 +17,7 @@ public class BossAttack : MonoBehaviour
     [SerializeField] Health health;
     GameObject heldPattern;
 
+    [SerializeField] UnityEvent onFirstPhaseStart;
     [SerializeField] UnityEvent onAllPhasesDone;
 
     private void Awake()
@@ -87,6 +88,10 @@ public class BossAttack : MonoBehaviour
     {
         health.NewPhaseHealth(bossPhases[currentPhase].GetStartingHealth());
         yield return new WaitForSeconds(delay);
+        if(currentPhase == 0)
+        {
+            onFirstPhaseStart.Invoke();
+        }
         StartCoroutine(MainLoop());
     }
 
