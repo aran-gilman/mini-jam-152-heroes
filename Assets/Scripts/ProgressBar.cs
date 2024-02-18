@@ -60,6 +60,7 @@ public class ProgressBar : MonoBehaviour
         }
 
         maxValue = newMax;
+        currentValue = newCurrentValue;
 
         RectTransform barRect = GetComponent<RectTransform>();
         RectTransform segmentRect = segmentPrefab.GetComponent<RectTransform>();
@@ -84,8 +85,6 @@ public class ProgressBar : MonoBehaviour
         {
             segments[i].gameObject.SetActive(false);
         }
-
-        currentValue = newCurrentValue;
     }
 
     private Sprite GetSpriteForSegment(int i)
