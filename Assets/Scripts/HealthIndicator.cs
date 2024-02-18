@@ -1,16 +1,42 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthIndicator : MonoBehaviour
 {
     [SerializeField]
+    private string targetTag;
+
     private Health target;
 
     private Text textDisplay;
     private string textFormat;
 
     private ProgressBar barDisplay;
+
+    public void LocateTarget()
+    {
+        if (target != null)
+        {
+            UnsubscribeFromTarget();
+        }
+
+        GameObject[] objs = GameObject.FindGameObjectsWithTag(targetTag);
+        foreach (GameObject obj in objs)
+        {
+            Health healthComponent = obj.GetComponentInChildren<Health>();
+            if (healthComponent != null)
+            {
+                target = healthComponent;
+                break;
+            }
+        }
+
+        if (target != null)
+        {
+            SubscribeToTarget();
+            OnMaxHealthChange();
+        }
+    }
 
     private void OnHealthChange()
     {
@@ -53,8 +79,12 @@ public class HealthIndicator : MonoBehaviour
 
     private void OnEnable()
     {
-        target.OnHealthChange.AddListener(OnHealthChange);
-        target.OnMaxHealthChange.AddListener(OnMaxHealthChange);
+        LocateTarget();
+        if (target == null)
+        {
+            enabled = false;
+            return;
+        }
     }
 
     private void Start()
@@ -64,7 +94,18 @@ public class HealthIndicator : MonoBehaviour
 
     private void OnDisable()
     {
-        target.OnHealthChange.RemoveListener(OnHealthChange);
+        UnsubscribeFromTarget();
+    }
+
+    private void SubscribeToTarget()
+    {
+        target.OnHealthChange.AddListener(OnHealthChange);
+        target.OnMaxHealthChange.AddListener(OnMaxHealthChange);
+    }
+
+    private void UnsubscribeFromTarget()
+    {
+        target.OnHealthChange.RemoveListener(OnHealthChange);   
         target.OnMaxHealthChange.RemoveListener(OnMaxHealthChange);
     }
 }

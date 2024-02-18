@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3233448120254284665}
   - component: {fileID: 7813724372048797038}
+  - component: {fileID: 6945765104688042777}
   m_Layer: 5
   m_Name: BossHealth
   m_TagString: Untagged
@@ -50,7 +51,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de542ee468e045340b4fbdc7a3da59dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  targetTag: Boss
+--- !u!114 &6945765104688042777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359411887200305281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1b24c14f7bf624cb8558a4f12642a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPhase: -1
+  delayToNextFrame: 1
+  onTargetPhaseEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7813724372048797038}
+        m_TargetAssemblyTypeName: HealthIndicator, Assembly-CSharp
+        m_MethodName: LocateTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onOtherPhaseEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2397555926334975123
 GameObject:
   m_ObjectHideFlags: 0
