@@ -11,6 +11,7 @@ public class ProjectileCluster : MonoBehaviour
     [SerializeField] Vector2 randomXOffset;
     [SerializeField] Vector2 randomYOffset;
     [SerializeField] bool randomFlipX;
+    [SerializeField] bool randomlyFlipObject;
     [SerializeField] float spinSpeed;
     [SerializeField] float seperationDelay;
     [SerializeField] bool destroyProjectilesOnSeperation;
@@ -22,6 +23,11 @@ public class ProjectileCluster : MonoBehaviour
         float rxo = Random.Range(randomXOffset.x, randomXOffset.y);
         float ryo = Random.Range(randomYOffset.x, randomYOffset.y);
         if (randomFlipX) rxo *= Random.Range(0, 2) * 2 - 1;
+        if (randomlyFlipObject)
+        {
+            int flip = Random.Range(0, 2) * 2 - 1;
+            transform.localScale = new Vector3(transform.localScale.x * flip, transform.localScale.y, 1);
+        }
 
         transform.position += Vector3.right * rxo + Vector3.up * (yOffset+ryo);
 
