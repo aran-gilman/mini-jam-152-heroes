@@ -87,11 +87,6 @@ public class HealthIndicator : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        OnMaxHealthChange();
-    }
-
     private void OnDisable()
     {
         UnsubscribeFromTarget();
