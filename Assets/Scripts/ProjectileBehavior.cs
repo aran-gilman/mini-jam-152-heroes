@@ -23,7 +23,7 @@ public class ProjectileBehavior : MonoBehaviour
     float bigShotSize = .9f;
     [SerializeField] float randomDegreeOffset;
     [SerializeField] bool startInvisible;
-    Vector2 reflectedDamage = new Vector2 (1, 2);
+    Vector2 reflectedDamage = new Vector2 (1, 1);
     Vector2 unreflectedDamage = new Vector2(1, 1);
     float shotFlashTime = .09f;
 
